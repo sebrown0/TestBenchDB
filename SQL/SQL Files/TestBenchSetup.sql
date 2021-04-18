@@ -91,6 +91,14 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+TRUNCATE entity_test_has_one_or_more_test_categories;
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\entity_test_has_one_or_more_test_categories.csv"
+INTO TABLE entity_test_has_one_or_more_test_categories 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 TRUNCATE test_run_has_test_suite_of_entity_tests;
 LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\test_run_has_test_suite_of_entity_tests.csv"
 INTO TABLE test_run_has_test_suite_of_entity_tests 

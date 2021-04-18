@@ -1,0 +1,6 @@
+id,entity_test_category_name,entity_test_category_description
+1,Visual,Does the entity look visualy correct
+2,Function,Entity perform a function
+3,Has value,Entity has an intial value
+4,Creates value,Entity creates a value.
+5,Receives value,Entity receives a value.
