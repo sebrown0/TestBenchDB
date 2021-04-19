@@ -1,0 +1,4 @@
+id,entity_id,entity_action_type_id,entity_action_desc,entity_action_data
+1,2,1,Click login,
+2,2,2,Enter user id,SB
+3,2,2,Enter user password,123

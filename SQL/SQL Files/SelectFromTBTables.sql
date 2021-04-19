@@ -10,6 +10,9 @@ SELECT * FROM test_bench.entity_type;
 SELECT * FROM test_bench.entity_has_version;
 SELECT * FROM test_bench.entity;
 SELECT * FROM test_bench.entity_details;
+SELECT * FROM test_bench.entity_can_have_action;
+SELECT * FROM test_bench.entity_action;
+SELECT * FROM test_bench.version_can_have_version_to_do;
 
 SELECT * FROM test_bench.entity_test_category;
 SELECT * FROM test_bench.entity_test_has_version;

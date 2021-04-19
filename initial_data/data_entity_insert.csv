@@ -1,0 +1,6 @@
+entity_id,entity_name,entity_parent,creation_type,entity_type_name,entity_desc
+1,Dakar Web,0,MAN,Application,The Dakar Web App
+2,Login Screen,1,MAN,Form,The login screen that a user first encounters
+3,User Name,2,MAN,Text Box,User name entry box
+4,User Password,2,MAN,Text Box,User password entry box
+5,Login Button,2,MAN,Button,Click to login
