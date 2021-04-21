@@ -1,6 +1,26 @@
 entity_id,entity_name,entity_parent,creation_type,entity_type_name,entity_desc
 1,Dakar Web,0,MAN,Application,The Dakar Web App
-2,Login Screen,1,MAN,Form,The login screen that a user first encounters
+2,Login Screen,1,MAN,Parent Form,The login screen that a user first encounters
 3,User Name,2,MAN,Text Box,User name entry box
 4,User Password,2,MAN,Text Box,User password entry box
 5,Login Button,2,MAN,Button,Click to login
+6,Home Page,1,MAN,Parent Form,First page after login. Controls navigation of the app and provides some data to the user.
+7,Home Page Info Bar,6,MAN,Info Bar,Top left info bar. Displays - 1: Logo 2: Current module 3:Full Screen Icon 4: TCL Icon 5: Current Company
+8,Dakar Logo,7,MAN,Image,Dakar logo
+9,Current Module Indicator,7,MAN,Label,Displays the currentlt selected module
+10,Menu Toggle,7,MAN,Button,Toggles the main menu view on/off
+11,Current Company,7,MAN,List,Displays current company and list of all available companies
+12,Home Page Top Right Nav Bar,6,MAN,Nav Bar,Provides shortcuts to app elements. Also is the only way to swap between modules.
+13,Authorisations,12,MAN,Button,Redirects the user to the authorisations form
+14,Employee Creation Wizard,12,MAN,Button,Redirects the user to the employee creation wizard form
+15,Employee CV,12,MAN,Button,Redirects the user to the employee CV form
+16,Employee Grid View,12,MAN,Button,Redirects the user to the employee grid view form
+17,Visual Reports,12,MAN,Button,Redirects the user to summary graphs form
+18,Dakar Intelligence,12,MAN,Button,Redirects the user to the DI form
+19,Organisation Chart,12,MAN,Button,Redirects the user to the organisation chart form
+20,My Company / Last Viewed,12,MAN,Button,Shows the last  viewed popup form
+21,All Notifications,12,MAN,Button,Shows the last  all notifications popup form. Displays total notifications (if there are any)
+22,New Employments,12,MAN,Button,Shows the new employments popup form.
+23,Terminations,12,MAN,Button,Shows the terminations popup form.
+24,Quick Links,12,MAN,Button,Shows the quick links popup form.
+25,User Avatar,12,MAN,Button,Shows the user config/action popup form. Displays the user image if setup.

@@ -3,9 +3,10 @@ SET foreign_key_checks = 0;
 
 TRUNCATE entity_details;
 TRUNCATE version;
+TRUNCATE version_to_do;
+TRUNCATE version_can_have_version_to_do;
 TRUNCATE entity;
 TRUNCATE entity_has_version;
-TRUNCATE version_to_do;
 TRUNCATE entity_can_have_action;
 TRUNCATE entity_action;
 TRUNCATE data_entity_action_insert;
