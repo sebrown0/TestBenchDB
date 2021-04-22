@@ -1,7 +1,8 @@
 entity_test_id,entity_test_name,entity_id,created_by_employee_id,entity_test_parent,description,initial_value,expected_value,received_value,insert_value,failure_halts_test,test_created
-1,DAKAR WEB - DEFAULT TEST CASE,1,SB_1,1,TODO - Enter Description,,,,,0,2021-04-21
-2,LOGIN SCREEN - DEFAULT TEST CASE,2,SB_1,2,TODO - Enter Description,,,,,0,2021-04-21
-3,Login Screen - User Name - Text Box,3,SB_1,2,TODO - Enter Description,,,,,0,2021-04-21
+1,Dakar Web,1,SB_1,1,This is the top level test for the Dakar Web App. For this test to pass all of its children must have passed.,,,,,0,2021-04-21
+2,LOGIN SCREEN - DEFAULT TEST CASE,2,SB_1,2,"This is the top level test for the Login Screen. For this test to pass all of its children must have passed.
+The login screen should only allow authorised users to enter the app.",,,,,0,2021-04-21
+3,Login Screen - User Name - Text Box,3,SB_1,2,Enter the user name.,,,,,0,2021-04-21
 4,Login Screen - User Password - Text Box,4,SB_1,2,TODO - Enter Description,,,,,0,2021-04-21
 5,Login Screen - Login Button - Button,5,SB_1,2,TODO - Enter Description,,,,,0,2021-04-21
 6,HOME PAGE - DEFAULT TEST CASE,6,SB_1,6,TODO - Enter Description,,,,,0,2021-04-21

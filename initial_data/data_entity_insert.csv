@@ -24,3 +24,17 @@ entity_id,entity_name,entity_parent,creation_type,entity_type_name,entity_desc
 23,Terminations,12,MAN,Button,Shows the terminations popup form.
 24,Quick Links,12,MAN,Button,Shows the quick links popup form.
 25,User Avatar,12,MAN,Button,Shows the user config/action popup form. Displays the user image if setup.
+26,Main Menu,6,MAN,Nav Bar,Main navigation bar for the currently selected module in the app.
+27,Employee List,26,MAN,Button,Redirect the user to the Employee List form.
+28,Documents,26,MAN,Button,Redirect the user to the Employee Document form.
+29,Employees,26,MAN,Button,Display the Employees sub menu.
+30,Employee Others,26,MAN,Button,Display the Employee Others sub menu.
+31,Payroll,26,MAN,Button,Display the Payroll sub menu.
+32,Employee Statistics,26,MAN,Button,Display the Employee Statistics sub menu.
+33,Payroll Statistics,26,MAN,Button,Display the Payroll Statistics sub menu.
+34,Absence Statistics,26,MAN,Button,Display the Absence Statistics sub menu.
+35,Reports,26,MAN,Button,Display the Reports sub menu.
+36,Monthly Reports,26,MAN,Button,Redirect the user to the Monthly Payroll Reports form.
+37,Yearly Reports,26,MAN,Button,Redirect the user to the Yearly Payroll Reports form.
+38,Bulk Updates,26,MAN,Button,Display the Bulk Updates sub menu.
+39,Settings,26,MAN,Button,Redirect the user to the Settings form.
