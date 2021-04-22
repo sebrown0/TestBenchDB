@@ -4,3 +4,4 @@ id,entity_test_category_name,entity_test_category_description
 3,Has value,Entity has an intial value
 4,Creates value,Entity creates a value.
 5,Receives value,Entity receives a value.
+6,Inserts value,Entity inserts value.

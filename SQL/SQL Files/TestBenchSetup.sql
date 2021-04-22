@@ -1,17 +1,19 @@
 USE test_bench;
 SET foreign_key_checks = 0;
 
-TRUNCATE entity_details;
 TRUNCATE version;
 TRUNCATE version_to_do;
 TRUNCATE version_can_have_version_to_do;
-TRUNCATE entity;
+TRUNCATE entity_test_has_version;
 TRUNCATE entity_has_version;
+
+TRUNCATE test_suite;
+TRUNCATE test_suite_has_entity_test;
+
+TRUNCATE entity;
+TRUNCATE entity_details;
 TRUNCATE entity_can_have_action;
 TRUNCATE entity_action;
-TRUNCATE data_entity_action_insert;
-TRUNCATE data_entity_insert;
-TRUNCATE data_version_to_do;
 
 -- Employee
 TRUNCATE employee_type;
@@ -63,46 +65,6 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-TRUNCATE entity_test_has_version;
-LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\entity_test_has_version.csv"
-INTO TABLE entity_test_has_version 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-TRUNCATE entity_test;
-LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\entity_test.csv"
-INTO TABLE entity_test 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-TRUNCATE entity_test_has_one_or_more_test_categories;
-LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\entity_test_has_one_or_more_test_categories.csv"
-INTO TABLE entity_test_has_one_or_more_test_categories 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-TRUNCATE test_run_has_test_suite_of_entity_tests;
-LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\test_run_has_test_suite_of_entity_tests.csv"
-INTO TABLE test_run_has_test_suite_of_entity_tests 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-TRUNCATE test_run;
-LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\test_run.csv"
-INTO TABLE test_run 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
 TRUNCATE data_entity_insert;
 LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\data_entity_insert.csv"
 INTO TABLE data_entity_insert 
@@ -122,6 +84,22 @@ IGNORE 1 ROWS;
 TRUNCATE data_version_to_do;
 LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\data_version_to_do.csv"
 INTO TABLE data_version_to_do 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE data_test_suite_insert;
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\data_test_suite_insert.csv"
+INTO TABLE data_test_suite_insert 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE data_entity_test_insert;
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\data_entity_test_insert.csv"
+INTO TABLE data_entity_test_insert 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'

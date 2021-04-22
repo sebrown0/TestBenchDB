@@ -6,6 +6,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity`(
     IN creationType ENUM('AUTO', 'MAN'),
     IN entityParent INT UNSIGNED)
 BEGIN
+    
     -- Create the details
 	CALL create_entity_details(entityDesc, creationType, @nextDetailsId);
     

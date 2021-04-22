@@ -1,5 +1,5 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_initial_version`(
-    IN entityName VARCHAR(45),
+    IN entityName VARCHAR(200),
     IN versionType ENUM('ENTITY', 'TEST'),
     INOUT newVersionId INT UNSIGNED)
 BEGIN
