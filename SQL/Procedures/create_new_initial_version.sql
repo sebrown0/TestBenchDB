@@ -1,6 +1,6 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_initial_version`(
     IN entityName VARCHAR(200),
-    IN versionType ENUM('ENTITY', 'TEST'),
+    IN versionType ENUM('ENTITY', 'TEST', 'TEST_SUITE'),
     INOUT newVersionId INT UNSIGNED)
 BEGIN
 	DECLARE initialDesc VARCHAR(200);
