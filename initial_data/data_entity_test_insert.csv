@@ -1,41 +1,39 @@
-entity_test_id,entity_test_name,entity_id,created_by_employee_id,entity_test_parent,description,initial_value,expected_value,received_value,insert_value,failure_halts_test,test_created
-1,Dakar Web,1,SB_1,1,This is the top level test for the Dakar Web App. For this test to pass all of its children must have passed.,,,,,0,2021-04-21
-2,LOGIN SCREEN - DEFAULT TEST CASE,2,SB_1,2,"This is the top level test for the Login Screen. For this test to pass all of its children must have passed.
-The login screen should only allow authorised users to enter the app.",,,,,0,2021-04-21
-3,Login Screen - User Name - Text Box,3,SB_1,2,Enter the user name.,,,,,0,2021-04-21
-4,Login Screen - User Password - Text Box,4,SB_1,2,TODO - Enter Description,,,,,0,2021-04-21
-5,Login Screen - Login Button - Button,5,SB_1,2,TODO - Enter Description,,,,,0,2021-04-21
-6,HOME PAGE - DEFAULT TEST CASE,6,SB_1,6,TODO - Enter Description,,,,,0,2021-04-21
-7,HOME PAGE INFO BAR - DEFAULT TEST CASE,7,SB_1,7,TODO - Enter Description,,,,,0,2021-04-21
-8,Home Page Info Bar - Dakar Logo - Image,8,SB_1,7,TODO - Enter Description,,,,,0,2021-04-21
-9,Home Page Info Bar - Current Module Indicator - Label,9,SB_1,7,TODO - Enter Description,,,,,0,2021-04-21
-10,Home Page Info Bar - Menu Toggle - Button,10,SB_1,7,TODO - Enter Description,,,,,0,2021-04-21
-11,Home Page Info Bar - Current Company - List,11,SB_1,7,TODO - Enter Description,,,,,0,2021-04-21
-12,HOME PAGE TOP RIGHT NAV BAR - DEFAULT TEST CASE,12,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-13,Home Page Top Right Nav Bar - Authorisations - Button,13,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-14,Home Page Top Right Nav Bar - Employee Creation Wizard - Button,14,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-15,Home Page Top Right Nav Bar - Employee CV - Button,15,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-16,Home Page Top Right Nav Bar - Employee Grid View - Button,16,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-17,Home Page Top Right Nav Bar - Visual Reports - Button,17,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-18,Home Page Top Right Nav Bar - Dakar Intelligence - Button,18,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-19,Home Page Top Right Nav Bar - Organisation Chart - Button,19,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-20,Home Page Top Right Nav Bar - My Company / Last Viewed - Button,20,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-21,Home Page Top Right Nav Bar - All Notifications - Button,21,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-22,Home Page Top Right Nav Bar - New Employments - Button,22,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-23,Home Page Top Right Nav Bar - Terminations - Button,23,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-24,Home Page Top Right Nav Bar - Quick Links - Button,24,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-25,Home Page Top Right Nav Bar - User Avatar - Button,25,SB_1,12,TODO - Enter Description,,,,,0,2021-04-21
-26,MAIN MENU - DEFAULT TEST CASE,26,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-27,Main Menu - Employee List - Button,27,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-28,Main Menu - Documents - Button,28,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-29,Main Menu - Employees - Button,29,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-30,Main Menu - Employee Others - Button,30,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-31,Main Menu - Payroll - Button,31,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-32,Main Menu - Employee Statistics - Button,32,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-33,Main Menu - Payroll Statistics - Button,33,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-34,Main Menu - Absence Statistics - Button,34,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-35,Main Menu - Reports - Button,35,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-36,Main Menu - Monthly Reports - Button,36,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-37,Main Menu - Yearly Reports - Button,37,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-38,Main Menu - Bulk Updates - Button,38,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
-39,Main Menu - Settings - Button,39,SB_1,26,TODO - Enter Description,,,,,0,2021-04-21
+entity_test_id,entity_test_name,entity_id,created_by_employee_id,entity_test_parent,description,initial_value,expected_value,received_value,insert_value,failure_halts_test,test_category_primary,test_category_secondary,test_created
+1,Dakar Web - Top Level Test Case,1,SB_1,0,This is the top level test for Dakar Web. For this to pass all its children must pass.,,,,,0,App,N\A,2021-04-26
+2,Login Screen - Top Level Test Case,2,SB_1,1,This is the top level test for Login Screen. For this to pass all its children must pass.,,,,,0,Group Controls,Group Data,2021-04-26
+3,Login Screen - User Name - Text In,3,SB_1,2,TODO - Enter Description,,,,,0,Data In,N\A,2021-04-26
+4,Login Screen - User Password - Text Out,4,SB_1,2,TODO - Enter Description,,,,,0,Data Out,N\A,2021-04-26
+5,Login Screen - Login Button - Button,5,SB_1,2,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+6,Home Page - Top Level Test Case,6,SB_1,1,This is the top level test for Home Page. For this to pass all its children must pass.,,,,,0,Group Controls,Group Data,2021-04-26
+7,Home Page Info Bar - Top Level Test Case,7,SB_1,6,This is the top level test for Home Page Info Bar. For this to pass all its children must pass.,,,,,0,Data Out,Redirect,2021-04-26
+8,Home Page Info Bar - Current Module Indicator - Label,9,SB_1,7,TODO - Enter Description,,,,,0,Data Out,N\A,2021-04-26
+9,Home Page Info Bar - Menu Toggle - Button,10,SB_1,7,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+10,Home Page Info Bar - Current Company - List,11,SB_1,7,TODO - Enter Description,,,,,0,Data Out,Data In,2021-04-26
+11,Home Page Top Right Nav Bar - Top Level Test Case,12,SB_1,6,This is the top level test for Home Page Top Right Nav Bar. For this to pass all its children must pass.,,,,,0,Redirect,Data Out,2021-04-26
+12,Home Page Top Right Nav Bar - Authorisations - Button,13,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+13,Home Page Top Right Nav Bar - Employee Creation Wizard - Button,14,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+14,Home Page Top Right Nav Bar - Employee CV - Button,15,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+15,Home Page Top Right Nav Bar - Employee Grid View - Button,16,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+16,Home Page Top Right Nav Bar - Visual Reports - Button,17,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+17,Home Page Top Right Nav Bar - Dakar Intelligence - Button,18,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+18,Home Page Top Right Nav Bar - Organisation Chart - Button,19,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+19,Home Page Top Right Nav Bar - My Company / Last Viewed - Button,20,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+20,Home Page Top Right Nav Bar - All Notifications - Button,21,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+21,Home Page Top Right Nav Bar - New Employments - Button,22,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+22,Home Page Top Right Nav Bar - Terminations - Button,23,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+23,Home Page Top Right Nav Bar - Quick Links - Button,24,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+24,Home Page Top Right Nav Bar - User Avatar - Button,25,SB_1,12,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+25,Main Menu - Top Level Test Case,26,SB_1,6,This is the top level test for Main Menu. For this to pass all its children must pass.,,,,,0,Redirect,Data Out,2021-04-26
+26,Main Menu - Employee List - Button,27,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+27,Main Menu - Documents - Button,28,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+28,Main Menu - Employees - Button,29,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+29,Main Menu - Employee Others - Button,30,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+30,Main Menu - Payroll - Button,31,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+31,Main Menu - Employee Statistics - Button,32,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+32,Main Menu - Payroll Statistics - Button,33,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+33,Main Menu - Absence Statistics - Button,34,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+34,Main Menu - Reports - Button,35,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+35,Main Menu - Monthly Reports - Button,36,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+36,Main Menu - Yearly Reports - Button,37,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+37,Main Menu - Bulk Updates - Button,38,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26
+38,Main Menu - Settings - Button,39,SB_1,26,TODO - Enter Description,,,,,0,Redirect,N\A,2021-04-26

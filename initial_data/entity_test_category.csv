@@ -1,7 +1,13 @@
 id,entity_test_category_name,entity_test_category_description
-1,Visual,Does the entity look visualy correct
-2,Function,Entity perform a function
-3,Has value,Entity has an intial value
-4,Creates value,Entity creates a value.
-5,Receives value,Entity receives a value.
-6,Inserts value,Entity inserts value.
+1,None,No test category
+2,App,Overall test for the app
+3,Group App Functions,A group of app functions eg a module
+4,Group Module Functions,A group of functions for a module
+5,Group Data,An entity that groups related data
+6,Group Controls,An entity that groups controls
+7,Redirect,An entity that redirects the user eg button
+8,Info,An entity that supplies information eg info bar
+9,Display Image,Displays an image
+10,Data In/Out,Has data in and out eg text box
+11,Data In,Has data in eg text box
+12,Data Out,Has data out eg label

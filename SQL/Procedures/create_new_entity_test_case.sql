@@ -12,21 +12,17 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
     IN failureHaltsTest TINYINT,    
     IN primaryTestCat VARCHAR(1000),
     IN secondaryTestCat VARCHAR(1000),
-    IN testCreated DATE)
+    IN testCreated DATE,
+    IN verType ENUM('MAJOR','MINOR','BUILD'))
 BEGIN   
     -- Create the version 
-    CALL create_new_initial_version(entityTestName, "Test", @nextVersionId);   
-    
-    -- Create the has version
-    INSERT INTO 
-		`test_bench`.`entity_test_has_version` (`entity_test_id`, `entity_test_entity_id`, `entity_test_entity_test_version_id`, `version_id`)
-    VALUES 
-		(entityTestId, entityId,  @nextVersionId,  @nextVersionId); 
+    CALL add_version(entityTestId, entityTestName, 'TEST', verType, get_max_ver_for_entity_test(entityTestId),  @nextVersionId);        
     
     -- Create the entity test
+    SET foreign_key_checks = 0;
     INSERT INTO 
 		`test_bench`.`entity_test` (
-			`id`, `entity_id`, `entity_test_version_id`, `entity_test_name`, `description`, `created_on`, 
+			`entity_test_id`, `entity_id`, `entity_test_version_id`, `entity_test_name`, `description`, `created_on`, 
             `initial_value`, `expected_value`, `received_value`, `insert_value`,  
             `failure_halts_test`, `created_by_employee_id`, `entity_test_parent`) 
 	VALUES 
@@ -35,13 +31,21 @@ BEGIN
             initialValue, expectedValue, receivedValue, insertValue, 
             failureHaltsTest, createdByEmployeeId, entityTestParent
 		);
-        	
+	
+	-- Add this test case to the test suite
+    INSERT INTO 
+		`test_bench`.`test_suite_has_entity_test` (`test_suite_id`, `entity_test_id`) 
+	VALUES 
+		(entityTestParent, entityTestId);
+        
+	SET foreign_key_checks = 1;
+	-- Create the has version
+    INSERT INTO 
+		`test_bench`.`entity_test_has_version` (`entity_test_id`, `version_id`)
+    VALUES 
+		(entityTestId, @nextVersionId); 
+                	
 	-- Add category(s) for TC
     CALL add_categories_for_entity_test(primaryTestCat, secondaryTestCat, entityTestId, entityId, @nextVersionId);
-    
-	-- Add this test case to the test suite
-	INSERT INTO 
-		`test_bench`.`test_suite_has_entity_test` (`test_suite_id`, `entity_test_id`, `entity_test_entity_id`, `entity_test_entity_test_version_id`)
-	VALUES 
-		(entityTestParent, entityTestId, entityId, @nextVersionId);
+
 END

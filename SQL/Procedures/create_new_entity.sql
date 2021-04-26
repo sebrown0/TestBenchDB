@@ -4,28 +4,27 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity`(
 	IN entityTypeName VARCHAR(45), 
     IN entityDesc TEXT, 
     IN creationType ENUM('AUTO', 'MAN'),
-    IN entityParent INT UNSIGNED)
+    IN entityParent INT UNSIGNED,
+    IN verType ENUM('MAJOR','MINOR','BUILD'))
 BEGIN
+    -- Create the version 
+     CALL add_version(entityId, entityName, 'Entity', verType, get_max_ver_for_entity(entityId),  @nextVersionId);       
     
     -- Create the details
-	CALL create_entity_details(entityDesc, creationType, @nextDetailsId);
+	CALL create_entity_details(entityDesc, creationType, @nextDetailsId);        
     
-    -- Create the version
-    CALL create_new_initial_version(entityName, "Entity", @nextVersionId); -- Perform check onn entityTypeName? TODO
-    
+    -- Create the entity
     SET foreign_key_checks = 0;
+    INSERT INTO 
+		`test_bench`.`entity` (`entity_id`, `entity_version_id`, `entity_name`, `entity_type_details_id`, `entity_type_id`, `entity_type_entity_type_name`, `entity_parent`) 
+	VALUES 
+		(entityId, @nextVersionId, entityName, @nextDetailsId, get_entity_type_id_for_name(entityTypeName), entityTypeName, entityParent);
+	SET foreign_key_checks = 1;
     
     -- Create the has version
     INSERT INTO 
-		`test_bench`.`entity_has_version` (`entity_id`, `entity_entity_version_id`, `version_id`) 
+		`test_bench`.`entity_has_version` (`entity_version_id`, `version_id`) 
 	VALUES 
-		(entityId, @nextVersionId, @nextVersionId);    
+		(entityId, @nextVersionId); 
     
-    -- Create the entity
-    INSERT INTO 
-		`test_bench`.`entity` (`id`, `entity_version_id`, `entity_name`, `entity_type_details_id`, `entity_type_id`, `entity_type_entity_type_name`, `entity_parent`) 
-	VALUES 
-		(entityId, @nextVersionId, entityName, @nextDetailsId, get_entity_type_id_for_name(entityTypeName), entityTypeName, entityParent);
-
-	SET foreign_key_checks = 1;
 END
