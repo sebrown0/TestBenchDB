@@ -7,6 +7,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity`(
     IN entityParent INT UNSIGNED,
     IN verType ENUM('MAJOR','MINOR','BUILD'))
 BEGIN
+	DECLARE entityTypeId INT;
+    
+    SET entityTypeId = get_entity_type_id_for_name(entityTypeName);
     -- Create the version 
      CALL add_version(entityId, entityName, 'Entity', verType, get_max_ver_for_entity(entityId),  @nextVersionId);       
     
@@ -18,7 +21,7 @@ BEGIN
     INSERT INTO 
 		`test_bench`.`entity` (`entity_id`, `entity_version_id`, `entity_name`, `entity_type_details_id`, `entity_type_id`, `entity_type_entity_type_name`, `entity_parent`) 
 	VALUES 
-		(entityId, @nextVersionId, entityName, @nextDetailsId, get_entity_type_id_for_name(entityTypeName), entityTypeName, entityParent);
+		(entityId, @nextVersionId, entityName, @nextDetailsId, entityTypeId, entityTypeName, entityParent);
 	SET foreign_key_checks = 1;
     
     -- Create the has version

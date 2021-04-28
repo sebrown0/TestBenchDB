@@ -1,40 +1,41 @@
 entity_id,entity_name,entity_parent,creation_type,entity_type_name,entity_desc
-1,Dakar Web,0,MAN,Application,The Dakar Web App
-2,Login Screen,1,MAN,Parent Form,The login screen that a user first encounters
-3,User Name,2,MAN,Text Box,User name entry box
-4,User Password,2,MAN,Text Box,User password entry box
-5,Login Button,2,MAN,Button,Click to login
-6,Home Page,1,MAN,Parent Form,First page after login. Controls navigation of the app and provides some data to the user.
-7,Home Page Info Bar,6,MAN,Info Bar,Top left info bar. Displays - 1: Logo 2: Current module 3:Full Screen Icon 4: TCL Icon 5: Current Company
-8,Dakar Logo,7,MAN,Image,Dakar logo
-9,Current Module Indicator,7,MAN,Label,Displays the currentlt selected module
-10,Menu Toggle,7,MAN,Button,Toggles the main menu view on/off
-11,Current Company,7,MAN,List,Displays current company and list of all available companies
-12,Home Page Top Right Nav Bar,6,MAN,Nav Bar,Provides shortcuts to app elements. Also is the only way to swap between modules.
-13,Authorisations,12,MAN,Button,Redirects the user to the authorisations form
-14,Employee Creation Wizard,12,MAN,Button,Redirects the user to the employee creation wizard form
-15,Employee CV,12,MAN,Button,Redirects the user to the employee CV form
-16,Employee Grid View,12,MAN,Button,Redirects the user to the employee grid view form
-17,Visual Reports,12,MAN,Button,Redirects the user to summary graphs form
-18,Dakar Intelligence,12,MAN,Button,Redirects the user to the DI form
-19,Organisation Chart,12,MAN,Button,Redirects the user to the organisation chart form
-20,My Company / Last Viewed,12,MAN,Button,Shows the last  viewed popup form
-21,All Notifications,12,MAN,Button,Shows the last  all notifications popup form. Displays total notifications (if there are any)
-22,New Employments,12,MAN,Button,Shows the new employments popup form.
-23,Terminations,12,MAN,Button,Shows the terminations popup form.
-24,Quick Links,12,MAN,Button,Shows the quick links popup form.
-25,User Avatar,12,MAN,Button,Shows the user config/action popup form. Displays the user image if setup.
-26,Main Menu,6,MAN,Nav Bar,Main navigation bar for the currently selected module in the app.
-27,Employee List,26,MAN,Button,Redirect the user to the Employee List form.
-28,Documents,26,MAN,Button,Redirect the user to the Employee Document form.
-29,Employees,26,MAN,Button,Display the Employees sub menu.
-30,Employee Others,26,MAN,Button,Display the Employee Others sub menu.
-31,Payroll,26,MAN,Button,Display the Payroll sub menu.
-32,Employee Statistics,26,MAN,Button,Display the Employee Statistics sub menu.
-33,Payroll Statistics,26,MAN,Button,Display the Payroll Statistics sub menu.
-34,Absence Statistics,26,MAN,Button,Display the Absence Statistics sub menu.
-35,Reports,26,MAN,Button,Display the Reports sub menu.
-36,Monthly Reports,26,MAN,Button,Redirect the user to the Monthly Payroll Reports form.
-37,Yearly Reports,26,MAN,Button,Redirect the user to the Yearly Payroll Reports form.
-38,Bulk Updates,26,MAN,Button,Display the Bulk Updates sub menu.
-39,Settings,26,MAN,Button,Redirect the user to the Settings form.
+1,Root,0,MAN,Root,The root entity has no purpose except be the parent of all other entities.
+2,Dakar Web,1,MAN,Application,The Dakar Web App
+3,Login Screen,2,MAN,Parent Form,The login screen that a user first encounters
+4,User Name,3,MAN,Text In,User name entry box
+5,User Password,3,MAN,Text Out,User password entry box
+6,Login Button,3,MAN,Button,Click to login
+7,Home Page,2,MAN,Parent Form,First page after login. Controls navigation of the app and provides some data to the user.
+8,Home Page Info Bar,7,MAN,Info Bar,Top left info bar. Displays - 1: Logo 2: Current module 3:Full Screen Icon 4: TCL Icon 5: Current Company
+9,Dakar Logo,8,MAN,Image,Dakar logo
+10,Current Module Indicator,8,MAN,Label,Displays the currentlt selected module
+11,Menu Toggle,8,MAN,Button,Toggles the main menu view on/off
+12,Current Company,8,MAN,List,Displays current company and list of all available companies
+13,Home Page Top Right Nav Bar,7,MAN,Nav Bar,Provides shortcuts to app elements. Also is the only way to swap between modules.
+14,Authorisations,13,MAN,Button,Redirects the user to the authorisations form
+15,Employee Creation Wizard,13,MAN,Button,Redirects the user to the employee creation wizard form
+16,Employee CV,13,MAN,Button,Redirects the user to the employee CV form
+17,Employee Grid View,13,MAN,Button,Redirects the user to the employee grid view form
+18,Visual Reports,13,MAN,Button,Redirects the user to summary graphs form
+19,Dakar Intelligence,13,MAN,Button,Redirects the user to the DI form
+20,Organisation Chart,13,MAN,Button,Redirects the user to the organisation chart form
+21,My Company / Last Viewed,13,MAN,Button,Shows the last  viewed popup form
+22,All Notifications,13,MAN,Button,Shows the last  all notifications popup form. Displays total notifications (if there are any)
+23,New Employments,13,MAN,Button,Shows the new employments popup form.
+24,Terminations,13,MAN,Button,Shows the terminations popup form.
+25,Quick Links,13,MAN,Button,Shows the quick links popup form.
+26,User Avatar,13,MAN,Button,Shows the user config/action popup form. Displays the user image if setup.
+27,Main Menu,7,MAN,Nav Bar,Main navigation bar for the currently selected module in the app.
+28,Employee List,27,MAN,Button,Redirect the user to the Employee List form.
+29,Documents,27,MAN,Button,Redirect the user to the Employee Document form.
+30,Employees,27,MAN,Button,Display the Employees sub menu.
+31,Employee Others,27,MAN,Button,Display the Employee Others sub menu.
+32,Payroll,27,MAN,Button,Display the Payroll sub menu.
+33,Employee Statistics,27,MAN,Button,Display the Employee Statistics sub menu.
+34,Payroll Statistics,27,MAN,Button,Display the Payroll Statistics sub menu.
+35,Absence Statistics,27,MAN,Button,Display the Absence Statistics sub menu.
+36,Reports,27,MAN,Button,Display the Reports sub menu.
+37,Monthly Reports,27,MAN,Button,Redirect the user to the Monthly Payroll Reports form.
+38,Yearly Reports,27,MAN,Button,Redirect the user to the Yearly Payroll Reports form.
+39,Bulk Updates,27,MAN,Button,Display the Bulk Updates sub menu.
+40,Settings,27,MAN,Button,Redirect the user to the Settings form.

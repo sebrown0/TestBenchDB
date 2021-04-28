@@ -1,3 +1,6 @@
+USE test_bench;
+SET @TEST_RUN_ID = 1;
+
 WITH RECURSIVE cteTestSuitesInTestRun (test_suite_id) AS (
   SELECT     ts.test_suite_id
   FROM       test_run tr
@@ -5,7 +8,7 @@ WITH RECURSIVE cteTestSuitesInTestRun (test_suite_id) AS (
 		  ON tr.id = has.test_run_id
   INNER JOIN test_suite ts
 		  ON ts.test_suite_id = has.test_suite_id
-  WHERE      tr.id = 1
+  WHERE      tr.id = @TEST_RUN_ID
   UNION ALL
   SELECT     t.test_suite_id			 
   FROM       test_suite t
@@ -13,22 +16,23 @@ WITH RECURSIVE cteTestSuitesInTestRun (test_suite_id) AS (
 		  ON t.test_suite_parent_id = cteTestSuitesInTestRun.test_suite_id
 )
 SELECT 
-	'test_suite_id', 
+	'id', 'test_run_id', 'test_suite_id', 
     'entity_test_id', 'entity_test_parent', 'entity_test_name', 'entity_test_description', 
-    'entity_id', 'entity_name', 'entity_type_name',
+    'entity_id', 'entity_name', 'entity_type_name', 'entity_test_version_id',
 	'entity_description', 'entity_last_tested_date', 'entity_last_tested_time',	
 	'initial_value', 'expected_value', 'received_value', 'insert_value', 'failure_halts_test',
 	'run_by', 'pass_fail_or_not_run', 'fail_severity', 'fail_reason', 'test_complete_notes' 
 UNION ALL
 (
-SELECT DISTINCT(cteTestSuitesInTestRun.test_suite_id), 
+SELECT 
+	"\\N", @TEST_RUN_ID, cteTestSuitesInTestRun.test_suite_id, 
     tst.entity_test_id, tst.entity_test_parent, tst.entity_test_name, tst.description, 
-	et.entity_id, et.entity_name, et.entity_type_entity_type_name,
+	et.entity_id, et.entity_name, et.entity_type_entity_type_name, entity_test_version_id,
 	ed.description, ed.last_tested_date, ed.last_tested_time,	
 	tst.initial_value, tst.expected_value, tst.received_value, tst.insert_value, tst.failure_halts_test,
-    'SB_1', 'NR','','', '' 
+    'SB_1', 'NR',"\\N","\\N", 'Test completed notes.' 
 INTO OUTFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\exported_data\\test_cases.csv'
-FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' -- ESCAPED BY '~'
 LINES TERMINATED BY '\n'
 FROM 	   
 	cteTestSuitesInTestRun
@@ -41,4 +45,4 @@ INNER JOIN entity et
 INNER JOIN entity_details ed 
 		ON ed.id = et.entity_type_details_id    
 ORDER BY   
-	tst.entity_test_id, tst.entity_test_parent, cteTestSuitesInTestRun.test_suite_id, et.entity_id);
+	et.entity_id, tst.entity_test_id, tst.entity_test_parent, cteTestSuitesInTestRun.test_suite_id);
