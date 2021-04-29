@@ -12,11 +12,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
     IN failureHaltsTest TINYINT,    
     IN primaryTestCat VARCHAR(1000),
     IN secondaryTestCat VARCHAR(1000),
-    IN testCreated DATE,
-    IN verType ENUM('MAJOR','MINOR','BUILD'))
+    IN testCreated DATE)
 BEGIN   
     -- Create the version 
-    CALL add_version(entityTestId, entityTestName, 'TEST', verType, get_max_ver_for_entity_test(entityTestId),  @nextVersionId);        
+    CALL add_version(entityTestId, entityTestName, 'TEST', get_max_ver_for_entity_test(entityTestId),  @nextVersionId);        
     
     -- Create the entity test
     SET foreign_key_checks = 0;

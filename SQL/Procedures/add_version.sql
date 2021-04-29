@@ -2,7 +2,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `add_version`(
 	IN entityId INT UNSIGNED, 
     IN entityName VARCHAR(200),
     IN entityVersionType ENUM('ENTITY', 'TEST', 'TEST_SUITE'),
-    IN verCategory ENUM('MAJOR','MINOR','BUILD'),
     IN ver VARCHAR(11),
     INOUT newVersionId INT UNSIGNED)
 BEGIN
@@ -10,30 +9,35 @@ BEGIN
     DECLARE mnr INT UNSIGNED;
     DECLARE bld INT UNSIGNED;
     DECLARE createdNewVer TINYINT DEFAULT 0;
-    DECLARE verNote VARCHAR(200);        
+    DECLARE verNote TEXT;        
 	
     SET mjr = get_major_ver_num(ver);    
     SET mnr = get_minor_ver_num(ver);
     SET bld = get_build_ver_num(ver);
-     
+ 
+	-- Set default if version cat not already set.
+	IF NOT @versionCategory IN('MAJOR','MINOR','BUILD') THEN
+		SET @versionCategory = 'MAJOR';
+    END IF;
+    
     IF mjr > 0 THEN		
 		SET createdNewVer = 0;
     ELSE
 		SET mjr = 1; SET mnr = 0; SET bld = 0;   
         SET createdNewVer = 1;
-        SET verNote = concat("No existing version. New major version of ", entityName);
+        SET verNote = get_ver_note("No existing version. New major version of", entityName);
 	END IF;
         
     IF NOT createdNewVer THEN		
-		IF verCategory = 'MAJOR' THEN
+		IF @versionCategory = 'MAJOR' THEN
 			SET mjr = mjr + 1; SET mnr = 0; SET bld = 0;   
-            SET verNote = concat("New major version of ", entityName);
-		ELSEIF verCategory = 'MINOR' THEN
+            SET verNote = get_ver_note("New major version of", entityName);
+		ELSEIF @versionCategory = 'MINOR' THEN
 			SET mnr = mnr + 1; SET bld = 0;        
-            SET verNote = concat("New minor version of ", entityName);
+            SET verNote = get_ver_note("New minor version of", entityName);
 		ELSE
 			SET bld = bld + 1;
-            SET verNote = concat("New build version of ", entityName);
+            SET verNote = get_ver_note("New build version of", entityName);
 		END IF;
     END IF;
     

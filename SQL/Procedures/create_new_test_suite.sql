@@ -2,11 +2,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_test_suite`(
 	IN testSuiteId INT UNSIGNED, 
 	IN testSuiteName VARCHAR(100), 
 	IN testSuiteParentId INT UNSIGNED,
-    IN testSuiteNotes TEXT,
-    IN verType ENUM('MAJOR','MINOR','BUILD'))
+    IN testSuiteNotes TEXT)
 BEGIN    	
     -- Create the version.
-    CALL add_version(testSuiteId, testSuiteName, 'TEST_SUITE', verType, get_max_ver_for_test_suite(testSuiteId),  @nextVersionId);
+    CALL add_version(testSuiteId, testSuiteName, 'TEST_SUITE', get_max_ver_for_test_suite(testSuiteId),  @nextVersionId);
 	
     -- Create the test suite
     SET foreign_key_checks = 0;

@@ -1,40 +1,40 @@
 entity_test_id,entity_test_name,entity_id,created_by_employee_id,entity_test_parent,description,initial_value,expected_value,received_value,insert_value,failure_halts_test,primary_test_cat,secondary_test_cat,should_have_tool_tip,tool_tip_text,test_created
-1,Root - Top Level Test Case,1,SB_1,0,This is the top level test for Root. For this to pass all its children must pass.,,,,,0,NA  ,NA,FALSE,N/A,2021-04-28
-2,Dakar Web - Top Level Test Case,2,SB_1,1,This is the top level test for Dakar Web. For this to pass all its children must pass.,,,,,0,App,NA,FALSE,N/A,2021-04-28
-3,Login Screen - Top Level Test Case,3,SB_1,2,This is the top level test for Login Screen. For this to pass all its children must pass.,,,,,0,Group Controls,Group Data,FALSE,N/A,2021-04-28
-4,Login Screen - User Name - Text In,4,SB_1,3,Should be able to enter user name. ,,,,steve,1,Data In,NA,FALSE,N/A,2021-04-28
-5,Login Screen - User Password - Text In,5,SB_1,3,Should be able to enter user password.,,,,1234,1,Data In,NA,FALSE,N/A,2021-04-28
-6,Login Screen - Login Button - Button - Redirect,6,SB_1,3,Click to enter login details. User should be redirected to homepage.,,,,,1,Redirect,NA,TRUE,Enter Tool Tip Text,2021-04-28
-7,Home Page - Top Level Test Case,7,SB_1,2,This is the top level test for Home Page. For this to pass all its children must pass.,,,,,0,Group Controls,Group Data,FALSE,N/A,2021-04-28
-8,Home Page Info Bar - Top Level Test Case,8,SB_1,7,This is the top level test for Home Page Info Bar. For this to pass all its children must pass.,,,,,0,Data Out,Redirect,FALSE,N/A,2021-04-28
-9,Home Page Info Bar - Current Module Indicator - Label,10,SB_1,8,Show the currently selected module.,,Payroll,,,0,Data Out,NA,FALSE,N/A,2021-04-28
-10,Home Page Info Bar - Menu Toggle - Button - Function,11,SB_1,8,Loads/unloads the main menu view.,,,,,0,Perform Function,NA,TRUE,Enter Tool Tip Text,2021-04-28
-11,Home Page Info Bar - Current Company - List,12,SB_1,8,Display the list of available companies.,,Mars Incorporated Ltd  Mars Northern Products Ltd,,,0,Data Out,Data In,FALSE,N/A,2021-04-28
-12,Home Page Top Right Nav Bar - Top Level Test Case,13,SB_1,7,This is the top level test for Home Page Top Right Nav Bar. For this to pass all its children must pass.,,,,,0,Redirect,Data Out,FALSE,N/A,2021-04-28
-13,Home Page Top Right Nav Bar - Authorisations - Button - Display,14,SB_1,13,Display the authorisations form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-14,Home Page Top Right Nav Bar - Employee Creation Wizard - Button - Display,15,SB_1,13,Display the employee creation form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-15,Home Page Top Right Nav Bar - Employee CV - Button - Display,16,SB_1,13,Display the employee CV form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-16,Home Page Top Right Nav Bar - Employee Grid View - Button - Display,17,SB_1,13,Display the employee grid view form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-17,Home Page Top Right Nav Bar - Visual Reports - Button - Display,18,SB_1,13,Display the visual reports form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-18,Home Page Top Right Nav Bar - Dakar Intelligence - Button - Display,19,SB_1,13,Display the dakar intelligence form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-19,Home Page Top Right Nav Bar - Organisation Chart - Button - Display,20,SB_1,13,Display the organisation chart form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-20,Home Page Top Right Nav Bar - My Company / Last Viewed - Button - Display,21,SB_1,13,Display the my company / last viewed pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-21,Home Page Top Right Nav Bar - All Notifications - Button - Display,22,SB_1,13,Display the all notifications pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-22,Home Page Top Right Nav Bar - New Employments - Button - Display,23,SB_1,13,Display the new notifications pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-23,Home Page Top Right Nav Bar - Terminations - Button - Display,24,SB_1,13,Display the terminations pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-24,Home Page Top Right Nav Bar - Quick Links - Button - Display,25,SB_1,13,Display the quick links pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-25,Home Page Top Right Nav Bar - User Avatar - Button - Display,26,SB_1,13,Display the user pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-26,Main Menu - Top Level Test Case,27,SB_1,7,This is the top level test for Main Menu. For this to pass all its children must pass.,,,,,0,Group App Functions,NA,FALSE,N/A,2021-04-28
-27,Main Menu - Employee List - Button - Display,28,SB_1,27,Display the employee list form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-28,Main Menu - Documents - Button - Display,29,SB_1,27,Display the documents form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-29,Main Menu - Employees - Button - Display,30,SB_1,27,Display the employees sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-30,Main Menu - Employee Others - Button - Display,31,SB_1,27,Display the employees others sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-31,Main Menu - Payroll - Button - Display,32,SB_1,27,Display the payroll sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-32,Main Menu - Employee Statistics - Button - Display,33,SB_1,27,Display the employee statistics sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-33,Main Menu - Payroll Statistics - Button - Display,34,SB_1,27,Display the employee payroll statistics sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-34,Main Menu - Absence Statistics - Button - Display,35,SB_1,27,Display the absence statistics sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-35,Main Menu - Reports - Button - Display,36,SB_1,27,Display the reports sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-36,Main Menu - Monthly Reports - Button - Display,37,SB_1,27,Display the monthly reports form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-37,Main Menu - Yearly Reports - Button - Display,38,SB_1,27,Display the yearly reports form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-38,Main Menu - Bulk Updates - Button - Display,39,SB_1,27,Display the bulk updates sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
-39,Main Menu - Settings - Button - Display,40,SB_1,27,Display the settings form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,2021-04-28
+1,Root - Top Level Test Case,1,SB_1,0,This is the top level test for Root. For this to pass all its children must pass.,,,,,0,NA  ,NA,FALSE,N/A,28/04/2021
+2,Dakar Web - Top Level Test Case,2,SB_1,1,This is the top level test for Dakar Web. For this to pass all its children must pass.,,,,,0,App,NA,FALSE,N/A,28/04/2021
+3,Login Screen - Top Level Test Case,3,SB_1,2,This is the top level test for Login Screen. For this to pass all its children must pass.,,,,,0,Group Controls,Group Data,FALSE,N/A,28/04/2021
+4,Login Screen - User Name - Text In,4,SB_1,3,Should be able to enter user name. ,,,,steve,1,Data In,NA,FALSE,N/A,28/04/2021
+5,Login Screen - User Password - Text In,5,SB_1,3,Should be able to enter user password.,,,,1234,1,Data In,NA,FALSE,N/A,28/04/2021
+6,Login Screen - Login Button - Button - Redirect,6,SB_1,3,Click to enter login details. User should be redirected to homepage.,,,,,1,Redirect,NA,TRUE,Enter Tool Tip Text,28/04/2021
+7,Home Page - Top Level Test Case,7,SB_1,2,This is the top level test for Home Page. For this to pass all its children must pass.,,,,,0,Group Controls,Group Data,FALSE,N/A,28/04/2021
+8,Home Page Info Bar - Top Level Test Case,8,SB_1,7,This is the top level test for Home Page Info Bar. For this to pass all its children must pass.,,,,,0,Data Out,Redirect,FALSE,N/A,28/04/2021
+9,Home Page Info Bar - Current Module Indicator - Label,10,SB_1,8,Show the currently selected module.,,Payroll,,,0,Data Out,NA,FALSE,N/A,28/04/2021
+10,Home Page Info Bar - Menu Toggle - Button - Function,11,SB_1,8,Loads/unloads the main menu view.,,,,,0,Perform Function,NA,TRUE,Enter Tool Tip Text,28/04/2021
+11,Home Page Info Bar - Current Company - List,12,SB_1,8,Display the list of available companies.,,Mars Incorporated Ltd  Mars Northern Products Ltd,,,0,Data Out,Data In,FALSE,N/A,28/04/2021
+12,Home Page Top Right Nav Bar - Top Level Test Case,13,SB_1,7,This is the top level test for Home Page Top Right Nav Bar. For this to pass all its children must pass.,,,,,0,Redirect,Data Out,FALSE,N/A,28/04/2021
+13,Home Page Top Right Nav Bar - Authorisations - Button - Display,14,SB_1,13,Display the authorisations form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+14,Home Page Top Right Nav Bar - Employee Creation Wizard - Button - Display,15,SB_1,13,Display the employee creation form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+15,Home Page Top Right Nav Bar - Employee CV - Button - Display,16,SB_1,13,Display the employee CV form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+16,Home Page Top Right Nav Bar - Employee Grid View - Button - Display,17,SB_1,13,Display the employee grid view form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+17,Home Page Top Right Nav Bar - Visual Reports - Button - Display,18,SB_1,13,Display the visual reports form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+18,Home Page Top Right Nav Bar - Dakar Intelligence - Button - Display,19,SB_1,13,Display the dakar intelligence form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+19,Home Page Top Right Nav Bar - Organisation Chart - Button - Display,20,SB_1,13,Display the organisation chart form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+20,Home Page Top Right Nav Bar - My Company / Last Viewed - Button - Display,21,SB_1,13,Display the my company / last viewed pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+21,Home Page Top Right Nav Bar - All Notifications - Button - Display,22,SB_1,13,Display the all notifications pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+22,Home Page Top Right Nav Bar - New Employments - Button - Display,23,SB_1,13,Display the new notifications pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+23,Home Page Top Right Nav Bar - Terminations - Button - Display,24,SB_1,13,Display the terminations pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+24,Home Page Top Right Nav Bar - Quick Links - Button - Display,25,SB_1,13,Display the quick links pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+25,Home Page Top Right Nav Bar - User Avatar - Button - Display,26,SB_1,13,Display the user pop up form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+26,Main Menu - Top Level Test Case,27,SB_1,7,This is the top level test for Main Menu. For this to pass all its children must pass.,,,,,0,Group App Functions,NA,FALSE,N/A,28/04/2021
+27,Main Menu - Employee List - Button - Display,28,SB_1,27,Display the employee list form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+28,Main Menu - Documents - Button - Display,29,SB_1,27,Display the documents form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+29,Main Menu - Employees - Button - Display,30,SB_1,27,Display the employees sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+30,Main Menu - Employee Others - Button - Display,31,SB_1,27,Display the employees others sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+31,Main Menu - Payroll - Button - Display,32,SB_1,27,Display the payroll sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+32,Main Menu - Employee Statistics - Button - Display,33,SB_1,27,Display the employee statistics sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+33,Main Menu - Payroll Statistics - Button - Display,34,SB_1,27,Display the employee payroll statistics sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+34,Main Menu - Absence Statistics - Button - Display,35,SB_1,27,Display the absence statistics sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+35,Main Menu - Reports - Button - Display,36,SB_1,27,Display the reports sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+36,Main Menu - Monthly Reports - Button - Display,37,SB_1,27,Display the monthly reports form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+37,Main Menu - Yearly Reports - Button - Display,38,SB_1,27,Display the yearly reports form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+38,Main Menu - Bulk Updates - Button - Display,39,SB_1,27,Display the bulk updates sub menu.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
+39,Main Menu - Settings - Button - Display,40,SB_1,27,Display the settings form.,,,,,0,Display Child,NA,TRUE,Enter Tool Tip Text,28/04/2021
