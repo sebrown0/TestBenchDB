@@ -11,3 +11,4 @@ id,entity_test_category_name,entity_test_category_description
 10,Data In/Out,Has data in and out eg text box
 11,Data In,Has data in eg text box
 12,Data Out,Has data out eg label
+13,Display Child,Displays a child form/pop up form etc

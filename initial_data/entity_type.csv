@@ -17,7 +17,10 @@ id,entity_type_name,entity_type_parent_id
 16,Tab,14
 17,Text Out,14
 18,Text In,14
-19,Test In/Out,14
+19,Text In/Out,14
 20,Label,14
 21,Button,14
-22,Function,1
+22,Button - Redirect,21
+23,Button - Display,21
+24,Button - Function,21
+25,Function,1
