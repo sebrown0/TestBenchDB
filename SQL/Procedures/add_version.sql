@@ -3,6 +3,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `add_version`(
     IN entityName VARCHAR(200),
     IN entityVersionType ENUM('ENTITY', 'TEST', 'TEST_SUITE'),
     IN ver VARCHAR(11),
+    IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'),
     INOUT newVersionId INT UNSIGNED)
 BEGIN
 	DECLARE mjr INT UNSIGNED;
@@ -16,8 +17,8 @@ BEGIN
     SET bld = get_build_ver_num(ver);
  
 	-- Set default if version cat not already set.
-	IF NOT @versionCategory IN('MAJOR','MINOR','BUILD') THEN
-		SET @versionCategory = 'MAJOR';
+	IF NOT newVerCat IN('MAJOR','MINOR','BUILD') THEN
+		SET newVerCat = 'MAJOR';
     END IF;
     
     IF mjr > 0 THEN		
@@ -29,10 +30,10 @@ BEGIN
 	END IF;
         
     IF NOT createdNewVer THEN		
-		IF @versionCategory = 'MAJOR' THEN
+		IF newVerCat = 'MAJOR' THEN
 			SET mjr = mjr + 1; SET mnr = 0; SET bld = 0;   
             SET verNote = get_ver_note("New major version of", entityName);
-		ELSEIF @versionCategory = 'MINOR' THEN
+		ELSEIF newVerCat = 'MINOR' THEN
 			SET mnr = mnr + 1; SET bld = 0;        
             SET verNote = get_ver_note("New minor version of", entityName);
 		ELSE

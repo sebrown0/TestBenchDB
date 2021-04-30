@@ -6,7 +6,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity`(
     IN creationType ENUM('AUTO', 'MAN'),
     IN entityParent INT UNSIGNED,
     IN shouldHaveToolTip VARCHAR(5),
-	IN toolTipText VARCHAR(500))    
+	IN toolTipText VARCHAR(500),
+    IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'))
 BEGIN
 	DECLARE entityTypeId INT;
     DECLARE entityHelpId INTEGER UNSIGNED;
@@ -14,7 +15,7 @@ BEGIN
     SET entityTypeId = get_entity_type_id_for_name(entityTypeName);
     
     -- Create the version 
-     CALL add_version(entityId, entityName, 'Entity', get_max_ver_for_entity(entityId),  @nextVersionId);       
+     CALL add_version(entityId, entityName, 'Entity', get_max_ver_for_entity(entityId), newVerCat,  @nextVersionId);       
     
     -- Create the details
 	CALL create_entity_details(entityDesc, creationType, @nextDetailsId);        
@@ -34,7 +35,7 @@ BEGIN
         
     -- Create the has version
     INSERT INTO 
-		`test_bench`.`entity_has_version` (`entity_version_id`, `version_id`) 
+		`test_bench`.`entity_has_version` (`entity_id`, `version_id`) 
 	VALUES 
 		(entityId, @nextVersionId); 
     

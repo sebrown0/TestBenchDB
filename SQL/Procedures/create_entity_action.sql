@@ -18,7 +18,7 @@ BEGIN
         
         -- Add the action to the list of the entity's actions.
         INSERT INTO 
-			`test_bench`.`entity_can_have_action` (`entity_id`, `entity_entity_version_id`, `entity_action_id`)
+			`test_bench`.`entity_can_have_action` (`entity_id`, `entity_version_id`, `entity_action_id`)
 		VALUES
 			(entityId, get_latest_version_id(entityId), entityActionId);            
     END IF;

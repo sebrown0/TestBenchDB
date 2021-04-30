@@ -4,7 +4,7 @@ SET foreign_key_checks = 0;
 -- This is added to the version if set, else the default version note is added.
 SET @versionNote = "";
 -- What is the version category. One of -> ENUM('MAJOR','MINOR','BUILD').
-SET @versionCategory = 'MINOR'; 
+-- SET @versionCategory = 'MINOR'; 
 
 TRUNCATE data_entity_insert;
 LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\data_entity_insert.csv"

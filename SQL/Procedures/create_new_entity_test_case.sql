@@ -1,6 +1,7 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
 	IN entityTestId INT UNSIGNED, 
 	IN entityId INT UNSIGNED, 
+    IN entityVersionId INT UNSIGNED, 
 	IN entityTestName VARCHAR(200),  
 	IN createdByEmployeeId VARCHAR(45),  
     IN entityTestParent INT UNSIGNED,
@@ -12,31 +13,32 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
     IN failureHaltsTest TINYINT,    
     IN primaryTestCat VARCHAR(1000),
     IN secondaryTestCat VARCHAR(1000),
-    IN testCreated DATE)
+    IN testCreated DATE,
+    IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'))
 BEGIN   
     -- Create the version 
-    CALL add_version(entityTestId, entityTestName, 'TEST', get_max_ver_for_entity_test(entityTestId),  @nextVersionId);        
+    CALL add_version(entityTestId, entityTestName, 'TEST', get_max_ver_for_entity_test(entityTestId), newVerCat,  @nextVersionId);        
     
     -- Create the entity test
     SET foreign_key_checks = 0;
     INSERT INTO 
 		`test_bench`.`entity_test` (
-			`entity_test_id`, `entity_id`, `entity_test_version_id`, `entity_test_name`, `description`, `created_on`, 
+			`entity_test_id`, `entity_id`, `entity_version_id`, `entity_test_version_id`, `entity_test_name`, `description`, `created_on`, 
             `initial_value`, `expected_value`, `received_value`, `insert_value`,  
             `failure_halts_test`, `created_by_employee_id`, `entity_test_parent`) 
 	VALUES 
 		(
-			entityTestId, entityId, @nextVersionId, entityTestName, entityTestDesc, testCreated, 
+			entityTestId, entityId, entityVersionId, @nextVersionId, entityTestName, entityTestDesc, testCreated, 
             initialValue, expectedValue, receivedValue, insertValue, 
             failureHaltsTest, createdByEmployeeId, entityTestParent
 		);
-	
+ 
 	-- Add this test case to the test suite
     INSERT INTO 
-		`test_bench`.`test_suite_has_entity_test` (`test_suite_id`, `entity_test_id`) 
+		`test_bench`.`test_suite_has_entity_test` (`test_suite_id`, `entity_test_id`, `entity_test_version_id`) 
 	VALUES 
-		(entityTestParent, entityTestId);
-        
+		(entityTestParent, entityTestId, @nextVersionId);
+
 	SET foreign_key_checks = 1;
 	-- Create the has version
     INSERT INTO 

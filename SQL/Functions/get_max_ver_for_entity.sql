@@ -14,7 +14,7 @@ BEGIN
 	INNER JOIN 
 		version ver ON ver.id = has_ver.version_id
 	WHERE 
-		has_ver.entity_version_id = entityId
+		has_ver.entity_id = entityId
 	ORDER BY 
 		ver.major desc, ver.minor desc, ver.build desc
 	LIMIT 1;

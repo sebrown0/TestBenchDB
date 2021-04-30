@@ -1,41 +1,41 @@
-entity_id,entity_name,entity_parent,creation_type,entity_type_name,entity_desc,should_have_tool_tip,tool_tip_text
-1,Root,0,MAN,Root,The root entity has no purpose except be the parent of all other entities.,FALSE,N\A
-2,Dakar Web,1,MAN,Application,The Dakar Web App,FALSE,N\A
-3,Login Screen,2,MAN,Parent Form,The login screen that a user first encounters,FALSE,N\A
-4,User Name,3,MAN,Text In,User name entry box,FALSE,N\A
-5,User Password,3,MAN,Text In,User password entry box,FALSE,N\A
-6,Login Button,3,MAN,Button - Redirect,Click to login,TRUE,Enter tool tip.
-7,Home Page,2,MAN,Parent Form,First page after login. Controls navigation of the app and provides some data to the user.,FALSE,N\A
-8,Home Page Info Bar,7,MAN,Info Bar,Top left info bar. Displays - 1: Logo 2: Current module 3:Full Screen Icon 4: TCL Icon 5: Current Company,FALSE,N\A
-9,Dakar Logo,8,MAN,Image,Dakar logo,FALSE,N\A
-10,Current Module Indicator,8,MAN,Label,Displays the currentlt selected module,FALSE,N\A
-11,Menu Toggle,8,MAN,Button - Function,Toggles the main menu view on/off,TRUE,Enter tool tip.
-12,Current Company,8,MAN,List,Displays current company and list of all available companies,FALSE,N\A
-13,Home Page Top Right Nav Bar,7,MAN,Nav Bar,Provides shortcuts to app elements. Also is the only way to swap between modules.,FALSE,N\A
-14,Authorisations,13,MAN,Button - Display,Display the authorisations form,TRUE,Enter tool tip.
-15,Employee Creation Wizard,13,MAN,Button - Display,Display the employee creation wizard form,TRUE,Enter tool tip.
-16,Employee CV,13,MAN,Button - Display,Display the employee CV form,TRUE,Enter tool tip.
-17,Employee Grid View,13,MAN,Button - Display,Display the employee grid view form,TRUE,Enter tool tip.
-18,Visual Reports,13,MAN,Button - Display,Display summary graphs form,TRUE,Enter tool tip.
-19,Dakar Intelligence,13,MAN,Button - Display,Display the DI form,TRUE,Enter tool tip.
-20,Organisation Chart,13,MAN,Button - Display,Display the organisation chart form,TRUE,Enter tool tip.
-21,My Company / Last Viewed,13,MAN,Button - Display,Display the last  viewed popup form,TRUE,Enter tool tip.
-22,All Notifications,13,MAN,Button - Display,Display the last  all notifications popup form. Displays total notifications (if there are any),TRUE,Enter tool tip.
-23,New Employments,13,MAN,Button - Display,Display the new employments popup form.,TRUE,Enter tool tip.
-24,Terminations,13,MAN,Button - Display,Display the terminations popup form.,TRUE,Enter tool tip.
-25,Quick Links,13,MAN,Button - Display,Display the quick links popup form.,TRUE,Enter tool tip.
-26,User Avatar,13,MAN,Button - Display,Display the user config/action popup form. Displays the user image if setup.,TRUE,Enter tool tip.
-27,Main Menu,7,MAN,Module,Main navigation bar for the currently selected module in the app.,FALSE,N\A
-28,Employee List,27,MAN,Button - Display,Display the Employee List form.,TRUE,Enter tool tip.
-29,Documents,27,MAN,Button - Display,Display the user to the Employee Document form.,TRUE,Enter tool tip.
-30,Employees,27,MAN,Button - Display,Display the Employees sub menu.,TRUE,Enter tool tip.
-31,Employee Others,27,MAN,Button - Display,Display the Employee Others sub menu.,TRUE,Enter tool tip.
-32,Payroll,27,MAN,Button - Display,Display the Payroll sub menu.,TRUE,Enter tool tip.
-33,Employee Statistics,27,MAN,Button - Display,Display the Employee Statistics sub menu.,TRUE,Enter tool tip.
-34,Payroll Statistics,27,MAN,Button - Display,Display the Payroll Statistics sub menu.,TRUE,Enter tool tip.
-35,Absence Statistics,27,MAN,Button - Display,Display the Absence Statistics sub menu.,TRUE,Enter tool tip.
-36,Reports,27,MAN,Button - Display,Display the Reports sub menu.,TRUE,Enter tool tip.
-37,Monthly Reports,27,MAN,Button - Display,Display the Monthly Payroll Reports form.,TRUE,Enter tool tip.
-38,Yearly Reports,27,MAN,Button - Display,Display the Yearly Payroll Reports form.,TRUE,Enter tool tip.
-39,Bulk Updates,27,MAN,Button - Display,Display the Bulk Updates sub menu.,TRUE,Enter tool tip.
-40,Settings,27,MAN,Button - Display,Display the user to the Settings form.,TRUE,Enter tool tip.
+entity_id,entity_name,entity_parent,creation_type,entity_type_name,entity_desc,should_have_tool_tip,tool_tip_text,new_version_category,endl
+1,Root,0,MAN,Root,FALSE,FALSE,N\A,MAJOR,\N
+2,Dakar Web,1,MAN,Application,The Dakar Web App,FALSE,N\A,MAJOR,\N
+3,Login Screen,2,MAN,Parent Form,The login screen that a user first encounters,FALSE,N\A,MAJOR,\N
+4,User Name,3,MAN,Text In,User name entry box,FALSE,N\A,MAJOR,\N
+5,User Password,3,MAN,Text In,User password entry box,FALSE,N\A,MAJOR,\N
+6,Login Button,3,MAN,Button - Redirect,Click to login,TRUE,Enter tool tip.,MAJOR,\N
+7,Home Page,2,MAN,Parent Form,First page after login. Controls navigation of the app and provides some data to the user.,FALSE,N\A,MAJOR,\N
+8,Home Page Info Bar,7,MAN,Info Bar,Top left info bar. Displays - 1: Logo 2: Current module 3:Full Screen Icon 4: TCL Icon 5: Current Company,FALSE,N\A,MAJOR,\N
+9,Dakar Logo,8,MAN,Image,Dakar logo,FALSE,N\A,MAJOR,\N
+10,Current Module Indicator,8,MAN,Label,Displays the currentlt selected module,FALSE,N\A,MAJOR,\N
+11,Menu Toggle,8,MAN,Button - Function,Toggles the main menu view on/off,TRUE,Enter tool tip.,MAJOR,\N
+12,Current Company,8,MAN,List,Displays current company and list of all available companies,FALSE,N\A,MAJOR,\N
+13,Home Page Top Right Nav Bar,7,MAN,Nav Bar,Provides shortcuts to app elements. Also is the only way to swap between modules.,FALSE,N\A,MAJOR,\N
+14,Authorisations,13,MAN,Button - Display,Display the authorisations form,TRUE,Enter tool tip.,MAJOR,\N
+15,Employee Creation Wizard,13,MAN,Button - Display,Display the employee creation wizard form,TRUE,Enter tool tip.,MAJOR,\N
+16,Employee CV,13,MAN,Button - Display,Display the employee CV form,TRUE,Enter tool tip.,MAJOR,\N
+17,Employee Grid View,13,MAN,Button - Display,Display the employee grid view form,TRUE,Enter tool tip.,MAJOR,\N
+18,Visual Reports,13,MAN,Button - Display,Display summary graphs form,TRUE,Enter tool tip.,MAJOR,\N
+19,Dakar Intelligence,13,MAN,Button - Display,Display the DI form,TRUE,Enter tool tip.,MAJOR,\N
+20,Organisation Chart,13,MAN,Button - Display,Display the organisation chart form,TRUE,Enter tool tip.,MAJOR,\N
+21,My Company / Last Viewed,13,MAN,Button - Display,Display the last  viewed popup form,TRUE,Enter tool tip.,MAJOR,\N
+22,All Notifications,13,MAN,Button - Display,Display the last  all notifications popup form. Displays total notifications (if there are any),TRUE,Enter tool tip.,MAJOR,\N
+23,New Employments,13,MAN,Button - Display,Display the new employments popup form.,TRUE,Enter tool tip.,MAJOR,\N
+24,Terminations,13,MAN,Button - Display,Display the terminations popup form.,TRUE,Enter tool tip.,MAJOR,\N
+25,Quick Links,13,MAN,Button - Display,Display the quick links popup form.,TRUE,Enter tool tip.,MAJOR,\N
+26,User Avatar,13,MAN,Button - Display,Display the user config/action popup form. Displays the user image if setup.,TRUE,Enter tool tip.,MAJOR,\N
+27,Main Menu,7,MAN,Module,Main navigation bar for the currently selected module in the app.,FALSE,N\A,MAJOR,\N
+28,Employee List,27,MAN,Button - Display,Display the Employee List form.,TRUE,Enter tool tip.,MAJOR,\N
+29,Documents,27,MAN,Button - Display,Display the user to the Employee Document form.,TRUE,Enter tool tip.,MAJOR,\N
+30,Employees,27,MAN,Button - Display,Display the Employees sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+31,Employee Others,27,MAN,Button - Display,Display the Employee Others sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+32,Payroll,27,MAN,Button - Display,Display the Payroll sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+33,Employee Statistics,27,MAN,Button - Display,Display the Employee Statistics sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+34,Payroll Statistics,27,MAN,Button - Display,Display the Payroll Statistics sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+35,Absence Statistics,27,MAN,Button - Display,Display the Absence Statistics sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+36,Reports,27,MAN,Button - Display,Display the Reports sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+37,Monthly Reports,27,MAN,Button - Display,Display the Monthly Payroll Reports form.,TRUE,Enter tool tip.,MAJOR,\N
+38,Yearly Reports,27,MAN,Button - Display,Display the Yearly Payroll Reports form.,TRUE,Enter tool tip.,MAJOR,\N
+39,Bulk Updates,27,MAN,Button - Display,Display the Bulk Updates sub menu.,TRUE,Enter tool tip.,MAJOR,\N
+40,Settings,27,MAN,Button - Display,Display the user to the Settings form.,TRUE,Enter tool tip.,MAJOR,\N
