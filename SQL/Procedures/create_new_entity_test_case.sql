@@ -25,12 +25,12 @@ BEGIN
 		`test_bench`.`entity_test` (
 			`entity_test_id`, `entity_id`, `entity_version_id`, `entity_test_version_id`, `entity_test_name`, `description`, `created_on`, 
             `initial_value`, `expected_value`, `received_value`, `insert_value`,  
-            `failure_halts_test`, `created_by_employee_id`, `entity_test_parent`) 
+            `failure_halts_test`, `created_by_employee_id`, `entity_test_parent`, `entity_test_parent_version_id`) 
 	VALUES 
 		(
 			entityTestId, entityId, entityVersionId, @nextVersionId, entityTestName, entityTestDesc, testCreated, 
             initialValue, expectedValue, receivedValue, insertValue, 
-            failureHaltsTest, createdByEmployeeId, entityTestParent
+            failureHaltsTest, createdByEmployeeId, entityTestParent, get_ver_id_from_test_case(entityTestParent)
 		);
  
 	-- Add this test case to the test suite

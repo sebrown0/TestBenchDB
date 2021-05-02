@@ -28,9 +28,9 @@ BEGIN
     INSERT INTO 
 		`test_bench`.`entity` (
 			`entity_id`, `entity_version_id`, `entity_name`, `entity_type_details_id`, 
-			`entity_type_id`, `entity_type_entity_type_name`, `entity_parent`, `entity_help_id`) 
+			`entity_type_id`, `entity_type_entity_type_name`, `entity_help_id`, `entity_parent`, `entity_parent_version_id`) 
 	VALUES 
-		(entityId, @nextVersionId, entityName, @nextDetailsId, entityTypeId, entityTypeName, entityParent, entityHelpId);
+		(entityId, @nextVersionId, entityName, @nextDetailsId, entityTypeId, entityTypeName, entityHelpId, entityParent, get_ver_id_from_entity(entityParent));
 	SET foreign_key_checks = 1;
         
     -- Create the has version
