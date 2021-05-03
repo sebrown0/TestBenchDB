@@ -25,6 +25,7 @@ BEGIN
 		'entity_test_id', 'entity_test_parent', 'entity_test_version_id', 'entity_test_version_num', 'entity_test_name', 'entity_test_description', 
 		'entity_id', 'entity_name', 'entity_type_name',
 		'entity_description', 'entity_last_tested_date', 'entity_last_tested_time',	
+        'has_tool_tip', 'tool_tip_text',
 		'initial_value', 'expected_value', 'received_value', 'insert_value', 'failure_halts_test',
 		'run_by', 'pass_fail_or_not_run', 'fail_severity', 'fail_reason', 'test_complete_notes' 
 	UNION ALL
@@ -35,6 +36,7 @@ BEGIN
 		get_ver_num(tst.entity_test_version_id) AS entity_test_version_num, tst.entity_test_name, tst.description,		
 		et.entity_id, et.entity_name, et.entity_type_entity_type_name,     
 		ed.description, ed.last_tested_date, ed.last_tested_time,	
+        hlp.has_tool_tip, hlp.tool_tip_text,
 		tst.initial_value, tst.expected_value, tst.received_value, tst.insert_value, tst.failure_halts_test,
 		'SB_1', 'NR', 'NULL','NULL', 'Test completed notes.' 
 	INTO OUTFILE '", @fileNameAndPath, "'
@@ -50,7 +52,9 @@ BEGIN
 		INNER JOIN version ver 
 				ON ver.id = tst_has_ver.version_id
 		INNER JOIN entity et 
-				ON tst.entity_id = et.entity_id
+				ON tst.entity_id = et.entity_id		
+		INNER JOIN entity_help hlp
+				ON hlp.id = et.entity_help_id
 		INNER JOIN entity_details ed 
 				ON ed.id = et.entity_type_details_id  
 		  ORDER BY et.entity_id, tst.entity_test_id, tst.entity_test_parent, cteTestSuitesInTestRun.test_suite_id);");

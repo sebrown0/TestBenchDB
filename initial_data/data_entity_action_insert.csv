@@ -1,32 +1,31 @@
 id,entity_id,entity_action_type_id,entity_action_desc,entity_action_data
 1,4,2,Text Box Enter Data: User Name - User name entry box,steve
-2,5,2,Text Box Enter Data: User Password - User password entry box,TODO - Enter text that should be entered.
+2,5,2,Text Box Enter Data: User Password - User password entry box,1234
 3,6,1,Button - Redirect: Login Button - Click to login,N\A
 4,9,3,Image: Dakar Logo - Dakar logo,logo.png
-5,10,3,Label: Current Module Indicator label text,TODO - Enter label text
+5,10,3,Label: Current Module Indicator label text,Payroll~Personell~Absence~T&A
 6,11,1,Button Function: Menu Toggle - Toggles the main menu view on/off,N\A
-7,12,4,List: Current Company - Displays current company and list of all available companies,TODO - Enter list items that should be displayed/entered/retrieved. SEPARATED BY A ~.
-8,4,2,Text Box Enter Data: User Name - User name entry box,TODO - Enter text that should be entered.
-9,15,3,Button Display: Employee Creation Wizard - Display the employee creation wizard form,N\A
-10,17,3,Button Display: Employee Grid View - Display the employee grid view form,N\A
-11,18,3,Button Display: Visual Reports - Display summary graphs form,N\A
-12,19,3,Button Display: Dakar Intelligence - Display the DI form,N\A
-13,20,3,Button Display: Organisation Chart - Display the organisation chart form,N\A
-14,21,3,Button Display: My Company / Last Viewed - Display the last  viewed popup form,N\A
-15,22,3,Button Display: All Notifications - Display the last  all notifications popup form. Displays total notifications (if there are any),N\A
-16,23,3,Button Display: New Employments - Display the new employments popup form.,N\A
-17,24,3,Button Display: Terminations - Display the terminations popup form.,N\A
-18,25,3,Button Display: Quick Links - Display the quick links popup form.,N\A
-19,26,3,Button Display: User Avatar - Display the user config/action popup form. Displays the user image if setup.,N\A
-20,28,3,Button Display: Employee List - Display the Employee List form.,N\A
-21,29,3,Button Display: Documents - Display the user to the Employee Document form.,N\A
-22,30,3,Button Display: Employees - Display the Employees sub menu.,N\A
-23,32,3,Button Display: Payroll - Display the Payroll sub menu.,N\A
-24,33,3,Button Display: Employee Statistics - Display the Employee Statistics sub menu.,N\A
-25,34,3,Button Display: Payroll Statistics - Display the Payroll Statistics sub menu.,N\A
-26,35,3,Button Display: Absence Statistics - Display the Absence Statistics sub menu.,N\A
-27,36,3,Button Display: Reports - Display the Reports sub menu.,N\A
-28,38,3,Button Display: Yearly Reports - Display the Yearly Payroll Reports form.,N\A
-29,39,3,Button Display: Bulk Updates - Display the Bulk Updates sub menu.,N\A
-30,40,3,Button Display: Settings - Display the user to the Settings form.,N\A
-31,14,3,Button Display: Authorisations - Display the authorisations form,N\A
+7,12,4,List: Current Company - Displays current company and list of all available companies,Mars Northern Products Ltd~Mars Incorporated Ltd
+8,15,3,Button Display: Employee Creation Wizard - Display the employee creation wizard form,N\A
+9,17,3,Button Display: Employee Grid View - Display the employee grid view form,N\A
+10,18,3,Button Display: Visual Reports - Display summary graphs form,N\A
+11,19,3,Button Display: Dakar Intelligence - Display the DI form,N\A
+12,20,3,Button Display: Organisation Chart - Display the organisation chart form,N\A
+13,21,3,Button Display: My Company / Last Viewed - Display the last  viewed popup form,N\A
+14,22,3,Button Display: All Notifications - Display the last  all notifications popup form. Displays total notifications (if there are any),N\A
+15,23,3,Button Display: New Employments - Display the new employments popup form.,N\A
+16,24,3,Button Display: Terminations - Display the terminations popup form.,N\A
+17,25,3,Button Display: Quick Links - Display the quick links popup form.,N\A
+18,26,3,Button Display: User Avatar - Display the user config/action popup form. Displays the user image if setup.,N\A
+19,28,3,Button Display: Employee List - Display the Employee List form.,N\A
+20,29,3,Button Display: Documents - Display the user to the Employee Document form.,N\A
+21,30,3,Button Display: Employees - Display the Employees sub menu.,N\A
+22,32,3,Button Display: Payroll - Display the Payroll sub menu.,N\A
+23,33,3,Button Display: Employee Statistics - Display the Employee Statistics sub menu.,N\A
+24,34,3,Button Display: Payroll Statistics - Display the Payroll Statistics sub menu.,N\A
+25,35,3,Button Display: Absence Statistics - Display the Absence Statistics sub menu.,N\A
+26,36,3,Button Display: Reports - Display the Reports sub menu.,N\A
+27,38,3,Button Display: Yearly Reports - Display the Yearly Payroll Reports form.,N\A
+28,39,3,Button Display: Bulk Updates - Display the Bulk Updates sub menu.,N\A
+29,40,3,Button Display: Settings - Display the user to the Settings form.,N\A
+30,14,3,Button Display: Authorisations - Display the authorisations form,N\A

@@ -39,8 +39,7 @@ SELECT
 INTO OUTFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\exported_data\\test_cases.csv'
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' -- ESCAPED BY '~'
 LINES TERMINATED BY '\n'
-FROM 	   
-	cteTestSuitesInTestRun
+	  FROM cteTestSuitesInTestRun
 INNER JOIN test_suite_has_entity_test has_test
 		ON cteTestSuitesInTestRun.test_suite_id = has_test.test_suite_id        
 INNER JOIN entity_test tst
@@ -53,5 +52,4 @@ INNER JOIN entity et
 		ON tst.entity_id = et.entity_id
 INNER JOIN entity_details ed 
 		ON ed.id = et.entity_type_details_id  
-ORDER BY   
-	et.entity_id, tst.entity_test_id, tst.entity_test_parent, cteTestSuitesInTestRun.test_suite_id);
+  ORDER BY et.entity_id, tst.entity_test_id, tst.entity_test_parent, cteTestSuitesInTestRun.test_suite_id);
