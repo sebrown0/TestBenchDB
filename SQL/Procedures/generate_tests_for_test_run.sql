@@ -1,8 +1,8 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `generate_tests_for_test_run`(IN testRunId INT UNSIGNED, IN filePath VARCHAR(350))
 BEGIN
-	SET @dat := now();	
-    SET @dateAndTime := concat(day(@dat), "-", month(@dat), "-", year(@dat), "_", hour(@dat), ";", minute(@dat), ";", second(@dat));
-	SET @fileNameAndPath := concat(filePath, "/", "TR_", testRunId, "_", @dateAndTime, ".csv");
+	SET @runName := get_test_run_name_for_file(testRunId);	
+    SET @dateAndTime := concat(date_format(CURRENT_DATE,'%d-%m-%Y'), "_", time_format(CURRENT_TIME,'%H%i%S'));
+	SET @fileNameAndPath := concat(filePath, "/", "TR_", testRunId, "_", @runName, "_", @dateAndTime, ".csv");
 	SET @cte := concat(
 	"WITH RECURSIVE cteTestSuitesInTestRun (test_suite_id) AS (
 	  SELECT     ts.test_suite_id
@@ -27,7 +27,7 @@ BEGIN
 		'entity_description', 'entity_last_tested_date', 'entity_last_tested_time',	
         'has_tool_tip', 'tool_tip_text',
 		'initial_value', 'expected_value', 'received_value', 'insert_value', 'failure_halts_test',
-		'run_by', 'pass_fail_or_not_run', 'fail_severity', 'fail_reason', 'test_complete_notes' 
+		'run_by', 'pass_fail_or_not_run', 'fail_severity', 'fail_reason', 'test_complete_notes', 'endl'  
 	UNION ALL
 	(
 	SELECT 
@@ -38,7 +38,7 @@ BEGIN
 		ed.description, ed.last_tested_date, ed.last_tested_time,	
         hlp.has_tool_tip, hlp.tool_tip_text,
 		tst.initial_value, tst.expected_value, tst.received_value, tst.insert_value, tst.failure_halts_test,
-		'SB_1', 'NR', 'NULL','NULL', 'Test completed notes.' 
+		'SB_1', 'NR', 'NULL','NULL', 'Test completed notes.','NULL' 
 	INTO OUTFILE '", @fileNameAndPath, "'
 	FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '' 
 	LINES TERMINATED BY '\n'
