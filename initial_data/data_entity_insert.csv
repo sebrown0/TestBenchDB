@@ -1,41 +1,6 @@
 entity_id,entity_name,entity_parent,creation_type,entity_type_name,entity_desc,should_have_tool_tip,tool_tip_text,new_version_category,endl
-1,Root,0,MAN,Root,FALSE,FALSE,N\A,MAJOR,\N
-2,Dakar Web,1,MAN,Application,The Dakar Web App,FALSE,N\A,MAJOR,\N
-3,Login Screen,2,MAN,Parent Form,The login screen that a user first encounters,FALSE,N\A,MAJOR,\N
-4,User Name,3,MAN,Text In,User name entry box,FALSE,N\A,MAJOR,\N
-5,User Password,3,MAN,Text In,User password entry box,FALSE,N\A,MAJOR,\N
-6,Login Button,3,MAN,Button - Redirect,Click to login,FALSE,N\A,MAJOR,\N
-7,Home Page,2,MAN,Parent Form,First page after login. Controls navigation of the app and provides some data to the user.,FALSE,N\A,MAJOR,\N
-8,Home Page Info Bar,7,MAN,Info Bar,Top left info bar. Displays - 1: Logo 2: Current module 3:Full Screen Icon 4: TCL Icon 5: Current Company,FALSE,N\A,MAJOR,\N
-9,Dakar Logo,8,MAN,Image,Dakar logo,FALSE,N\A,MAJOR,\N
-10,Current Module Indicator,8,MAN,Label,Displays the currentlt selected module,FALSE,N\A,MAJOR,\N
-11,Menu Toggle,8,MAN,Button - Function,Toggles the main menu view on/off,TRUE,Show or hide main menu. ,MAJOR,\N
-12,Current Company,8,MAN,List,Displays current company and list of all available companies,FALSE,N\A,MAJOR,\N
-13,Home Page Top Right Nav Bar,7,MAN,Nav Bar,Provides shortcuts to app elements. Also is the only way to swap between modules.,FALSE,N\A,MAJOR,\N
-14,Authorisations,13,MAN,Button - Display,Display the authorisations form,TRUE,Authorisations,MAJOR,\N
-15,Employee Creation Wizard,13,MAN,Button - Display,Display the employee creation wizard form,TRUE,Employee Creation,MAJOR,\N
-16,Employee CV,13,MAN,Button - Display,Display the employee CV form,TRUE,Employee CV,MAJOR,\N
-17,Employee Grid View,13,MAN,Button - Display,Display the employee grid view form,TRUE,Employee Grid View,MAJOR,\N
-18,Visual Reports,13,MAN,Button - Display,Display summary graphs form,TRUE,Visual Reports,MAJOR,\N
-19,Dakar Intelligence,13,MAN,Button - Display,Display the DI form,TRUE,Dakar Intelligence,MAJOR,\N
-20,Organisation Chart,13,MAN,Button - Display,Display the organisation chart form,TRUE,My Company / Last Viewed,MAJOR,\N
-21,My Company / Last Viewed,13,MAN,Button - Display,Display the last  viewed popup form,TRUE,Notifications,MAJOR,\N
-22,All Notifications,13,MAN,Button - Display,Display the last  all notifications popup form. Displays total notifications (if there are any),TRUE,New Employements,MAJOR,\N
-23,New Employments,13,MAN,Button - Display,Display the new employments popup form.,TRUE,Terminations,MAJOR,\N
-24,Terminations,13,MAN,Button - Display,Display the terminations popup form.,TRUE,User Management,MAJOR,\N
-25,Quick Links,13,MAN,Button - Display,Display the quick links popup form.,TRUE,Quick Links,MAJOR,\N
-26,User Avatar,13,MAN,Button - Display,Display the user config/action popup form. Displays the user image if setup.,TRUE,User,MAJOR,\N
-27,Main Menu,7,MAN,Module,Main navigation bar for the currently selected module in the app.,FALSE,N\A,MAJOR,\N
-28,Employee List,27,MAN,Button - Display,Display the Employee List form.,FALSE,N\A,MAJOR,\N
-29,Documents,27,MAN,Button - Display,Display the user to the Employee Document form.,FALSE,N\A,MAJOR,\N
-30,Employees,27,MAN,Button - Display,Display the Employees sub menu.,FALSE,N\A,MAJOR,\N
-31,Employee Others,27,MAN,Button - Display,Display the Employee Others sub menu.,FALSE,N\A,MAJOR,\N
-32,Payroll,27,MAN,Button - Display,Display the Payroll sub menu.,FALSE,N\A,MAJOR,\N
-33,Employee Statistics,27,MAN,Button - Display,Display the Employee Statistics sub menu.,FALSE,N\A,MAJOR,\N
-34,Payroll Statistics,27,MAN,Button - Display,Display the Payroll Statistics sub menu.,FALSE,N\A,MAJOR,\N
-35,Absence Statistics,27,MAN,Button - Display,Display the Absence Statistics sub menu.,FALSE,N\A,MAJOR,\N
-36,Reports,27,MAN,Button - Display,Display the Reports sub menu.,FALSE,N\A,MAJOR,\N
-37,Monthly Reports,27,MAN,Button - Display,Display the Monthly Payroll Reports form.,FALSE,N\A,MAJOR,\N
-38,Yearly Reports,27,MAN,Button - Display,Display the Yearly Payroll Reports form.,FALSE,N\A,MAJOR,\N
-39,Bulk Updates,27,MAN,Button - Display,Display the Bulk Updates sub menu.,FALSE,N\A,MAJOR,\N
-40,Settings,27,MAN,Button - Display,Display the user to the Settings form.,FALSE,N\A,MAJOR,\N
+41,Employee List - Form,28,MAN,Form,Displays a grid view of the employees in a company.,FALSE,N\A,MAJOR,\N
+42,Employee List - Company,41,MAN,Label,Label for the company combo box.,FALSE,N\A,MAJOR,\N
+43,Employee List - Company,41,MAN,Combo,Display and select from available companies.,FALSE,N\A,MAJOR,\N
+44,Employee List - Filter,41,MAN,Label,Label for filter,FALSE,N\A,MAJOR,\N
+45,Employee List - Filter,41,MAN,Combo,Selects filter,FALSE,N\A,MAJOR,\N

@@ -4,7 +4,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
     IN entityVersionId INT UNSIGNED, 
 	IN entityTestName VARCHAR(200),  
 	IN createdByEmployeeId VARCHAR(45),  
-    IN entityTestParent INT UNSIGNED,
+    IN entityParentId INT UNSIGNED,
     IN entityTestDesc VARCHAR(1000), 
     IN initialValue VARCHAR(1000), 
     IN expectedValue VARCHAR(1000), 
@@ -20,24 +20,23 @@ BEGIN
     CALL add_version(entityTestId, entityTestName, 'TEST', get_max_ver_for_entity_test(entityTestId), newVerCat,  @nextVersionId);        
     
     -- Create the entity test
-    SET foreign_key_checks = 0;
+    SET foreign_key_checks = 0;    
+
     INSERT INTO 
 		`test_bench`.`entity_test` (
 			`entity_test_id`, `entity_id`, `entity_version_id`, `entity_test_version_id`, `entity_test_name`, `description`, `created_on`, 
             `initial_value`, `expected_value`, `received_value`, `insert_value`,  
-            `failure_halts_test`, `created_by_employee_id`, `entity_test_parent`, `entity_test_parent_version_id`) 
-	VALUES 
-		(
+            `failure_halts_test`, `created_by_employee_id`) 
+	VALUES 	(
 			entityTestId, entityId, entityVersionId, @nextVersionId, entityTestName, entityTestDesc, testCreated, 
             initialValue, expectedValue, receivedValue, insertValue, 
-            failureHaltsTest, createdByEmployeeId, entityTestParent, get_ver_id_from_test_case(entityTestParent)
-		);
+            failureHaltsTest, createdByEmployeeId);
  
 	-- Add this test case to the test suite
     INSERT INTO 
 		`test_bench`.`test_suite_has_entity_test` (`test_suite_id`, `entity_test_id`, `entity_test_version_id`) 
 	VALUES 
-		(entityTestParent, entityTestId, @nextVersionId);
+		(entityParentId, entityTestId, @nextVersionId);
 
 	SET foreign_key_checks = 1;
 	-- Create the has version

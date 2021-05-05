@@ -18,9 +18,10 @@ id,entity_type_name,entity_type_parent_id
 17,Text Out,14
 18,Text In,14
 19,Text In/Out,14
-20,Label,14
-21,Button,14
-22,Button - Redirect,21
-23,Button - Display,21
-24,Button - Function,21
-25,Function,1
+20,Combo,14
+21,Label,14
+22,Button,14
+23,Button - Redirect,21
+24,Button - Display,21
+25,Button - Function,21
+26,Function,1

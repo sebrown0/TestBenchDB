@@ -22,7 +22,7 @@ BEGIN
     SET @q1 := concat("
 	SELECT 
 		'id', 'test_run_id', 'test_suite_id', 
-		'entity_test_id', 'entity_test_parent', 'entity_test_version_id', 'entity_test_version_num', 'entity_test_name', 'entity_test_description', 
+		'entity_test_id', 'entity_test_version_id', 'entity_test_version_num', 'entity_test_name', 'entity_test_description', 
 		'entity_id', 'entity_name', 'entity_type_name',
 		'entity_description', 'entity_last_tested_date', 'entity_last_tested_time',	
         'has_tool_tip', 'tool_tip_text',
@@ -32,7 +32,7 @@ BEGIN
 	(
 	SELECT 
 		'NULL',", testRunId, ",cteTestSuitesInTestRun.test_suite_id, 		
-		tst.entity_test_id, tst.entity_test_parent, tst.entity_test_version_id, 
+		tst.entity_test_id, tst.entity_test_version_id, 
 		get_ver_num(tst.entity_test_version_id) AS entity_test_version_num, tst.entity_test_name, tst.description,		
 		et.entity_id, et.entity_name, et.entity_type_entity_type_name,     
 		ed.description, ed.last_tested_date, ed.last_tested_time,	
@@ -57,7 +57,7 @@ BEGIN
 				ON hlp.id = et.entity_help_id
 		INNER JOIN entity_details ed 
 				ON ed.id = et.entity_type_details_id  
-		  ORDER BY et.entity_id, tst.entity_test_id, tst.entity_test_parent, cteTestSuitesInTestRun.test_suite_id);");
+		  ORDER BY et.entity_id, tst.entity_test_id, cteTestSuitesInTestRun.test_suite_id);");
 	
     SET @q2 := concat(@cte,@q1);    
     PREPARE s1 FROM @q2;

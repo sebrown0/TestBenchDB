@@ -2,7 +2,36 @@ id,test_suite_name,test_suite_parent_id,new_version_category,endl
 1,Root,0,MAJOR,\N
 2,Dakar Web,1,MAJOR,\N
 3,Login Screen,2,MAJOR,\N
+6,Login Button,3,MAJOR,\N
 7,Home Page,2,MAJOR,\N
 8,Home Page Info Bar,7,MAJOR,\N
+11,Menu Toggle,8,MAJOR,\N
 13,Home Page Top Right Nav Bar,7,MAJOR,\N
+14,Authorisations,13,MAJOR,\N
+15,Employee Creation Wizard,13,MAJOR,\N
+16,Employee CV,13,MAJOR,\N
+17,Employee Grid View,13,MAJOR,\N
+18,Visual Reports,13,MAJOR,\N
+19,Dakar Intelligence,13,MAJOR,\N
+20,Organisation Chart,13,MAJOR,\N
+21,My Company / Last Viewed,13,MAJOR,\N
+22,All Notifications,13,MAJOR,\N
+23,New Employments,13,MAJOR,\N
+24,Terminations,13,MAJOR,\N
+25,Quick Links,13,MAJOR,\N
+26,User Avatar,13,MAJOR,\N
 27,Main Menu,7,MAJOR,\N
+28,Employee List,27,MAJOR,\N
+29,Documents,27,MAJOR,\N
+30,Employees,27,MAJOR,\N
+31,Employee Others,27,MAJOR,\N
+32,Payroll,27,MAJOR,\N
+33,Employee Statistics,27,MAJOR,\N
+34,Payroll Statistics,27,MAJOR,\N
+35,Absence Statistics,27,MAJOR,\N
+36,Reports,27,MAJOR,\N
+37,Monthly Reports,27,MAJOR,\N
+38,Yearly Reports,27,MAJOR,\N
+39,Bulk Updates,27,MAJOR,\N
+40,Settings,27,MAJOR,\N
+41,Employee List - Form,28,MAJOR,\N
