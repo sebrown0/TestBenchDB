@@ -1,10 +1,12 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity`(
+	IN id INT UNSIGNED, 
 	IN entityId INT UNSIGNED, 
 	IN entityName VARCHAR(100), 
 	IN entityTypeName VARCHAR(45), 
     IN entityDesc TEXT, 
     IN creationType ENUM('AUTO', 'MAN'),
-    IN entityParent INT UNSIGNED,
+    IN entityParentId INT UNSIGNED,
+    IN entityParentEntityId INT UNSIGNED,
     IN shouldHaveToolTip VARCHAR(5),
 	IN toolTipText VARCHAR(500),
     IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'))
@@ -24,19 +26,15 @@ BEGIN
     CALL add_entity_help(shouldHaveToolTip , toolTipText, NULL, NULL, entityHelpId);
     
     -- Create the entity
-    SET foreign_key_checks = 0;
+    SET foreign_key_checks = 0; 
     INSERT INTO 
-		`test_bench`.`entity` (
-			`entity_id`, `entity_version_id`, `entity_name`, `entity_type_details_id`, 
-			`entity_type_id`, `entity_type_entity_type_name`, `entity_help_id`, `entity_parent`, `entity_parent_version_id`) 
+		`test_bench`.`entity_has_version` (`version_id`, `entity_id`, `entity_entity_id`) 
 	VALUES 
-		(entityId, @nextVersionId, entityName, @nextDetailsId, entityTypeId, entityTypeName, entityHelpId, entityParent, get_ver_id_from_entity(entityParent));
-	SET foreign_key_checks = 1;
-        
-    -- Create the has version
-    INSERT INTO 
-		`test_bench`.`entity_has_version` (`entity_id`, `version_id`) 
+		(@nextVersionId, id, entityId);
+	INSERT INTO 
+		`test_bench`.`entity` (`id`, `entity_id`, `entity_name`, `entity_type_details_id`, `entity_type_id`, `entity_type_entity_type_name`, `entity_help_id`, `parent_id`, `parent_entity_id`)
 	VALUES 
-		(entityId, @nextVersionId); 
+		(id, entityId, entityName, @nextDetailsId, entityTypeId, entityTypeName, entityHelpId, entityParentId, entityParentEntityId);
     
+	SET foreign_key_checks = 1;
 END

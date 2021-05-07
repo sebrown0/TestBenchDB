@@ -1,8 +1,10 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_test_suite`(
+	IN id INT UNSIGNED, 
 	IN testSuiteId INT UNSIGNED, 
 	IN testSuiteName VARCHAR(100), 
-	IN testSuiteParentId INT UNSIGNED,
     IN testSuiteNotes TEXT,
+	IN parentId INT UNSIGNED,
+    IN testSuiteParentId INT UNSIGNED,
     IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'))
 BEGIN    	
     -- Create the version.
@@ -11,16 +13,16 @@ BEGIN
     -- Create the test suite
     -- With the latest version id of the parent.
     SET foreign_key_checks = 0;
-    INSERT INTO 
-		`test_bench`.`test_suite` (`test_suite_id`, `test_suite_version_id`, `test_suite_name`, `test_suite_notes`, `test_suite_parent_id`, `test_suite_parent_version_id`) 
-	VALUES 
-		(testSuiteId, @nextVersionId, testSuiteName, testSuiteNotes, testSuiteParentId, get_ver_id_from_test_suite(testSuiteParentId));
     
-	SET foreign_key_checks = 1;
+    INSERT INTO `test_bench`.`test_suite_has_version` 
+		(`version_id`, `test_suite_id`, `test_suite_test_suite_id`) 
+    VALUES 
+		(@nextVersionId, id, testSuiteId);
     
-	-- Create the has version.
-    INSERT INTO 
-		`test_bench`.`test_suite_has_version` (`test_suite_id`, `version_id`) 
+	INSERT INTO 
+		`test_bench`.`test_suite` (`id`, `test_suite_id`, `test_suite_name`, `test_suite_notes`, `parent_id`, `parent_test_suite_id`) 
 	VALUES 
-		(testSuiteId, @nextVersionId);	
+		(id, testSuiteId, testSuiteName, testSuiteNotes, parentId, testSuiteParentId);
+    
+	SET foreign_key_checks = 1;    
 END
