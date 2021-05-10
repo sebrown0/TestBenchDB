@@ -7,7 +7,7 @@ BEGIN
 				hlp.id AS help_id,hlp.has_tool_tip, hlp.tool_tip_text, hlp.help_file_name, hlp.help_text
 	FROM 		test_bench.entity ent
 	INNER JOIN 	entity_details det
-			ON 	det.id = ent.entity_type_details_id 
+			ON 	det.id = ent.entity_details_id 
 	INNER JOIN  entity_help hlp
 			ON 	hlp.id = ent.entity_help_id
 	WHERE		ent.id = entRowId AND ent.entity_id = entId;
