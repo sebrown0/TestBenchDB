@@ -5,8 +5,8 @@ BEGIN
     
 	SELECT id INTO entityHelpId FROM `entity_help` ORDER BY id DESC LIMIT 1;
     IF entityHelpId IS NULL THEN
-		SET entityHelpId = 1;
+		SET entityHelpId = 0;
     END IF;
     
-	RETURN entityHelpId;
+	RETURN entityHelpId + 1;
 END
