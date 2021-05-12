@@ -11,6 +11,7 @@ BEGIN
     SET helpId = get_entity_help_id(entityRowId, entityId);    
 	IF helpId IS NULL OR helpId <= 0 THEN
 		SET helpId = get_next_entity_help_id();        
+        SELECT helpId;
     END IF;
     
 	INSERT INTO 
@@ -21,7 +22,5 @@ BEGIN
 		has_tool_tip = hasToolTip, 
         tool_tip_text = toolTipText, 
         help_file_name = helpFileName, 
-        help_text = helpText; 
-        
-	UPDATE entity ent SET ent.entity_help_id = helpId WHERE ent.id = entityRowId;
+        help_text = helpText;         	
 END

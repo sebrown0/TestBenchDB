@@ -17,7 +17,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     IN entityDesc TEXT, 
     IN creationType ENUM('AUTO', 'MAN'),
     IN lastTestedDate DATE, 
-    IN lastTestedTime TIME,  
+    IN lastTestedTime TIME, 
     -- Action
     IN entityActionTypeId INT UNSIGNED,
     IN entityActionDesc VARCHAR(500), 
@@ -26,13 +26,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     IN versionNote TEXT,
     IN mjr INT UNSIGNED,
     IN mnr INT UNSIGNED,
-    IN bld INT UNSIGNED,
-    IN versionTodoId INT UNSIGNED
+    IN bld INT UNSIGNED
     )
 BEGIN
 	CALL create_or_update_entity(entityRowId, entityId , entityName, entityDetailsId, entityTypeName, entityHelpId, entityParentId, entityParentEntityId);
 	CALL create_or_update_entity_help(entityRowId ,entityId , hasToolTip, toolTipText, helpFileName, helpText);	
 	CALL create_or_update_entity_details(entityRowId, entityId , entityDesc, creationType, lastTestedDate, lastTestedTime);
 	CALL create_or_update_entity_action(entityRowId, entityId, entityActionTypeId, entityActionDesc, entityActionData);		
-	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld, versionTodoId);
+	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld);
 END

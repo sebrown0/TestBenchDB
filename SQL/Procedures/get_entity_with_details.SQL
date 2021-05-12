@@ -5,7 +5,7 @@ BEGIN
 	SELECT 		ent.*, 
 				det.id AS details_id, det.description, det.date_added, det.creation_type, det.last_tested_date, det.last_tested_time,    
 				hlp.id AS help_id,hlp.has_tool_tip, hlp.tool_tip_text, hlp.help_file_name, hlp.help_text,
-                ver.version_note, ver.major, ver.minor, ver.build, ver.version_to_do_id,
+                ver.version_note, ver.major, ver.minor, ver.build, 
                 act.id AS entity_action_id, act.entity_id AS action_entity_row_id, have_act.entity_entity_id AS action_entity_id, 
                 act.entity_action_desc, act.entity_action_data, act.entity_action_type_id, get_entity_action_name(act.entity_action_type_id) AS entity_action_type_name 
 	FROM 		test_bench.entity ent
