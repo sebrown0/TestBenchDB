@@ -43,9 +43,9 @@ BEGIN
     END IF;
     
     SET newVersionId = get_next_new_version_id(); 
-    
+
     INSERT INTO 
-		`test_bench`.`version` (`id`, `entity_name`, `version_note`, `version_type`, `major`, `minor`, `build`, `version_to_do_id`) 
+		`test_bench`.`version` (`id`, `entity_name`, `version_note`, `version_type`, `major`, `minor`, `build`) 
     VALUES 
-		(newVersionId, entityName, verNote, entityVersionType, mjr, mnr, bld, NULL);         
+		(newVersionId, entityName, verNote, entityVersionType, mjr, mnr, bld);         
 END
