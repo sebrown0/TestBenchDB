@@ -2,8 +2,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity_action`(
     IN entityRowId INT UNSIGNED,     	
     IN entityEntityId INT UNSIGNED,
     IN entityActionTypeId INT UNSIGNED,
-    IN entityActionDesc VARCHAR(500), 
-    IN entityActionData VARCHAR(500))
+    IN entityActionDesc VARCHAR(1000), 
+    IN entityActionFunc VARCHAR(250), 
+    IN entityActionDataIn TEXT,
+    IN entityActionDataOut TEXT,
+    IN entityActionDataExpected TEXT)
 BEGIN
 	DECLARE actId INT UNSIGNED;
     
@@ -20,13 +23,19 @@ BEGIN
 			SET foreign_key_checks = 1;
 		END IF;
 		
-		INSERT INTO 
-			`test_bench`.`entity_action` (`id`, `entity_id`, `entity_action_desc`, `entity_action_data`, `entity_action_type_id`) 
-		VALUES 
-			(actId, entityRowId, entityActionDesc, entityActionData, entityActionTypeId)	
+		INSERT INTO `test_bench`.`entity_action` 			(
+			`id`, `entity_id`, `entity_action_desc`, `entity_action_function`, 
+            `entity_action_data_in`, `entity_action_data_out`, `entity_action_data_expected`, `entity_action_type_id`) 
+
+		VALUES (
+			actId, entityRowId, entityActionDesc, entityActionFunc, 
+            entityActionDataIn, entityActionDataOut, entityActionDataExpected, entityActionTypeId)	
 		ON DUPLICATE KEY UPDATE
 			entity_action_desc = entityActionDesc, 
-			entity_action_data = entityActionData, 
+            entity_action_function = entityActionFunc,            
+			entity_action_data_in = entityActionDataIn, 
+            entity_action_data_out = entityActionDataOut,
+            entity_action_data_expected = entityActionDataExpected,
 			entity_action_type_id = entityActionTypeId;
 	END IF;
 END

@@ -21,7 +21,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     -- Action
     IN entityActionTypeId INT UNSIGNED,
     IN entityActionDesc VARCHAR(500), 
-    IN entityActionData VARCHAR(500),
+    IN entityActionFunc VARCHAR(250), 
+    IN entityActionDataIn TEXT,
+    IN entityActionDataOut TEXT,
+    IN entityActionDataExpected TEXT,
     -- Version
     IN versionNote TEXT,
     IN mjr INT UNSIGNED,
@@ -32,6 +35,6 @@ BEGIN
 	CALL create_or_update_entity(entityRowId, entityId , entityName, entityDetailsId, entityTypeName, entityHelpId, entityParentId, entityParentEntityId);
 	CALL create_or_update_entity_help(entityRowId ,entityId , hasToolTip, toolTipText, helpFileName, helpText);	
 	CALL create_or_update_entity_details(entityRowId, entityId , entityDesc, creationType, lastTestedDate, lastTestedTime);
-	CALL create_or_update_entity_action(entityRowId, entityId, entityActionTypeId, entityActionDesc, entityActionData);		
+	CALL create_or_update_entity_action(entityRowId, entityId, entityActionTypeId, entityActionDesc, entityActionFunc, entityActionDataIn, entityActionDataOut, entityActionDataExpected);		
 	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld);
 END
