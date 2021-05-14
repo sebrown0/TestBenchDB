@@ -1,5 +1,5 @@
 USE test_bench;
--- CALL truncate_test_tables();
+CALL truncate_test_tables();
 
 -- This is added to the version if set, else the default version note is added.
 SET @versionNote = "";

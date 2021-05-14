@@ -1,15 +1,9 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_test_run`(
 	IN testRunId INT UNSIGNED,
 	IN testRunName VARCHAR(100),
-    IN cmnts VARCHAR(1000),
-    IN testSuiteId INT UNSIGNED,
-    IN testSuiteVersionId INT UNSIGNED)
+    IN cmnts VARCHAR(1000))
 BEGIN
-    
-	UPDATE 
-		`test_bench`.`test_run` 
-	SET  
-		`test_run_name` = testRunName, `comments` = cmnts
-	WHERE
-		`id` = testRunId;
+	UPDATE 	test_run
+	SET  	test_run_name = testRunName, comments = cmnts
+	WHERE	id = testRunId;     
 END
