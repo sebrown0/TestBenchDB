@@ -1,12 +1,14 @@
 SELECT * FROM test_bench.entity;
 SELECT * FROM test_bench.entity_help;
 SELECT * FROM test_bench.entity_details;
-SELECT * FROM test_bench.entity_action;
+SELECT * FROM test_bench.entity_create_or_update_new_versionaction;
 SELECT * FROM test_bench.entity_can_have_action;
 SELECT * FROM test_bench.version;
 SELECT * FROM test_bench.entity_has_version;
+SELECT * FROM test_bench.entity_todo;
 
 call get_version_info_for_entity(1);
+CALL delete_entity(26,26);
 
 SET foreign_key_checks = 0;
 SET @rId = get_next_entity_row_id();

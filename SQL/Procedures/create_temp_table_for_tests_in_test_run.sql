@@ -4,8 +4,8 @@ BEGIN
 	CREATE TABLE 	tbl_test_suite_has_child_suites_for_test_run WITH RECURSIVE test_suite_has_child_suites (test_suite_row_id, test_suite_id) AS (
 		SELECT 		id AS test_suite_row_id, test_suite_id
 		FROM 		test_suite 
-		WHERE 		parent_id IN(
-						SELECT 		ts.parent_id 
+		WHERE 		id IN(
+						SELECT 		ts.id
 						FROM 		test_run tr
 						INNER JOIN 	test_run_has_test_suite tr_has_ts
 								ON 	tr_has_ts.test_run_id = tr.id
