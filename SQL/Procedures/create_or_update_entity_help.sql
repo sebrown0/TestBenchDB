@@ -11,7 +11,6 @@ BEGIN
     SET helpId = get_entity_help_id(entityRowId, entityId);    
 	IF helpId IS NULL OR helpId <= 0 THEN
 		SET helpId = get_next_entity_help_id();        
-        SELECT helpId;
     END IF;
     
 	INSERT INTO 

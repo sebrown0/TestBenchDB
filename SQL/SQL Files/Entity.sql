@@ -7,8 +7,9 @@ SELECT * FROM test_bench.version;
 SELECT * FROM test_bench.entity_has_version;
 SELECT * FROM test_bench.entity_todo;
 
+select * from entity e join entity_help h on e.id = h.entity_id and e.entity_help_id = h.id where e.entity_id=16;
 call get_version_info_for_entity(1);
-CALL delete_entity(26,26);
+CALL delete_entity(4,4);
 
 SET foreign_key_checks = 0;
 SET @rId = get_next_entity_row_id();
