@@ -13,7 +13,7 @@ BEGIN
     SET hasVer = get_entity_has_ver(entityRowId, entityEntityId, mjr, mnr, bld);
     SET versionId = hasVer;
     CALL create_or_update_version(versionId, entityRowId, entityEntityId, entityName, versionNote, 'ENTITY', mjr, mnr, bld);    
-    IF hasVer IS NULL THEN    
+    IF hasVer IS NULL OR hasVer <= 0 THEN    
 		CALL create_entity_has_ver(versionId, entityRowId, entityEntityId);	
     END IF;        
 END

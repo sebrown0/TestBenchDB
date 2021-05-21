@@ -8,6 +8,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     IN entityHelpId INT UNSIGNED, 
     IN entityParentId INT UNSIGNED,
     IN entityParentEntityId INT UNSIGNED,        
+    IN isElement TINYINT,
     -- Help
     IN hasToolTip VARCHAR(5),
 	IN toolTipText VARCHAR(500), 
@@ -32,9 +33,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     IN bld INT UNSIGNED
     )
 BEGIN
-	CALL create_or_update_entity(entityRowId, entityId , entityName, entityDetailsId, entityTypeName, entityHelpId, entityParentId, entityParentEntityId);
+	CALL create_or_update_entity(entityRowId, entityId , entityName, entityDetailsId, entityTypeName, entityHelpId, entityParentId, entityParentEntityId, isElement);
 	CALL create_or_update_entity_help(entityRowId ,entityId , hasToolTip, toolTipText, helpFileName, helpText);	
 	CALL create_or_update_entity_details(entityRowId, entityId , entityDesc, creationType, lastTestedDate, lastTestedTime);
 	CALL create_or_update_entity_action(entityRowId, entityId, entityActionTypeId, entityActionDesc, entityActionFunc, entityActionDataIn, entityActionDataOut, entityActionDataExpected);		
 	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld);
+    CALL create_or_update_entity_as_element(entityRowId, entityId, isElement);
 END

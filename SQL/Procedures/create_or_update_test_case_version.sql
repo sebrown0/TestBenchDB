@@ -15,7 +15,7 @@ BEGIN
     SET versionId = hasVer;
     
 	CALL create_or_update_version(versionId, testCaseRowId, testCaseId, testCaseName, versionNote, 'TEST', mjr, mnr, bld, versionTodoId);
-    IF hasVer IS NULL THEN    
+    IF hasVer IS NULL OR hasVer <= 0 THEN    
 		CALL create_test_case_has_ver(versionId, testCaseRowId, testCaseId);	
     END IF;
 END

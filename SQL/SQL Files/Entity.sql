@@ -1,15 +1,35 @@
 SELECT * FROM test_bench.entity;
+SELECT * FROM test_bench.entity ORDER BY id DESC;
+SELECT * FROM test_bench.entity WHERE id < 9000 ORDER BY id DESC;
+SELECT * FROM test_bench.entity_type;
+SELECT * FROM test_bench.entity_action;
 SELECT * FROM test_bench.entity_help;
-SELECT * FROM test_bench.entity_details;
-SELECT * FROM test_bench.entity_create_or_update_new_versionaction;
+SELECT * FROM test_bench.entity_details ORDER BY id DESC;
 SELECT * FROM test_bench.entity_can_have_action;
-SELECT * FROM test_bench.version;
+SELECT * FROM test_bench.version ORDER BY id DESC;
+SELECT * FROM test_bench.version WHERE version_type = 'ENTITY' AND entity_name = 'Card';
+SELECT * FROM test_bench.version WHERE version_type = 'ENTITY' AND id = 9019;
+SELECT * FROM test_bench.version WHERE id = 435;
 SELECT * FROM test_bench.entity_has_version;
+SELECT * FROM test_bench.entity_has_version WHERE version_id = 437;
 SELECT * FROM test_bench.entity_todo;
+
+SELECT * FROM test_bench.entity WHERE id = 9020;
+SELECT * FROM test_bench.entity_action WHERE entity_id = 107;
+SELECT * FROM test_bench.entity_action WHERE id = 94;
+SELECT * FROM test_bench.entity_action WHERE entity_action_data_expected = '#INF#';
+
+CALL get_entity_with_details(9019,9019);
+
+CALL create_or_update_entity_version(9019,9019,'Container','',1,0,0);
+SELECT get_entity_has_ver(9019, 9019, 1, 0, 0);
+SET @vID = 0;
+CALL create_or_update_version(@vID, 9019, 9019, 'Container', '', 'ENTITY', 1, 0, 0); 
 
 select * from entity e join entity_help h on e.id = h.entity_id and e.entity_help_id = h.id where e.entity_id=16;
 call get_version_info_for_entity(1);
-CALL delete_entity(4,4);
+CALL delete_entity(136,135);
+CALL delete_entity_and_tests(136,135);
 
 SET foreign_key_checks = 0;
 SET @rId = get_next_entity_row_id();
@@ -27,6 +47,8 @@ CALL create_or_update_entity_version(@rId, @eId , 'root', 'ver notes.', 1,1,0,nu
 SET foreign_key_checks = 1;
 
 CALL get_enity_row_id_for_entity_version('1','1','0','0');
+
+CALL create_or_update_all_entity_details('58','58','Select A Country','58','List','58','49','49','False','-','','','Select employee country','MAN','1900-01-01','00:00:00','6','List: Select A Country. Select from the available list','Display data','-','-','TODO - Enter list of data separated by a ~','','1','0','0');
 
 -- Ent 	-> entityRowId, entityId, entityName, entityTypeName, entityParentId, entityParentEntityId
 -- Help -> hasToolTip, toolTipText, helpFileName, helpText, 
@@ -81,3 +103,11 @@ INSERT INTO `test_bench`.`entity` (`id`, `entity_id`, `entity_name`, `entity_typ
 VALUES (2, 1, 'root', 1, 1, 'Root', 1, NULL, NULL);
 SET foreign_key_checks = 1;
 
+create_or_update_entity_version`(9019,9019,'','',1,0,0);			
+	IN entityRowId INT UNSIGNED, 
+    IN entityEntityId INT UNSIGNED, 
+    IN entityName VARCHAR(200),
+    IN versionNote TEXT,
+    IN mjr INT UNSIGNED,
+    IN mnr INT UNSIGNED,
+    IN bld INT UNSIGNED

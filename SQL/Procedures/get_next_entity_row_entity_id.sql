@@ -1,4 +1,4 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_next_entity_row_id_entity_id`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_next_entity_row_entity_id`()
 BEGIN
 	DECLARE rowId INT UNSIGNED;
     DECLARE entId INT UNSIGNED;
@@ -19,6 +19,5 @@ BEGIN
     
     IF entId = NULL THEN SET entId = 0; END IF;
    
-	SELECT rowId+1 AS row_id, entId+1 AS entity_id;
-	
+	SELECT rowId+1 AS id, entId+1 AS entity_id;
 END

@@ -1,7 +1,7 @@
 CREATE DEFINER=`root`@`localhost` FUNCTION `get_entity_has_ver`(entRowId INT UNSIGNED, entityId INT UNSIGNED, mjr SMALLINT UNSIGNED, mnr SMALLINT UNSIGNED, bld SMALLINT UNSIGNED) RETURNS tinyint(1)
     DETERMINISTIC
 BEGIN	
-	DECLARE verId BOOL;
+	DECLARE verId INT UNSIGNED;
     
 	SELECT 		ver.id
 	INTO 		verId
@@ -14,5 +14,9 @@ BEGIN
 	AND			ver.minor = mnr
 	AND		 	ver.build = bld;
                 
-	RETURN verId; 
+	IF verId > 0 THEN
+		RETURN 1; 
+	ELSE
+		RETURN 0; 
+    END IF;
 END

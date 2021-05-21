@@ -9,8 +9,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_version`(
     IN mnr INT UNSIGNED,
     IN bld INT UNSIGNED)
 BEGIN
-	IF verID IS NULL THEN
-		SET verID = get_next_new_version_id();
+	IF verID IS NULL OR verID <= 0 THEN
+		SET verID = get_next_new_version_id();    
     END IF;
     
 	INSERT INTO	`test_bench`.`version` 

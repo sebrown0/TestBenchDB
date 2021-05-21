@@ -5,10 +5,10 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `get_entity_help_id`(
 BEGIN
 	DECLARE helpId INT;    
     
-    SELECT 		id 
+    SELECT 		entity_help_id 
     INTO 		helpId
-	FROM 		entity_help
-	WHERE 		id = entityRowId AND entity_id = entityEntityId; 
+	FROM 		entity
+	WHERE 		id = entityRowId  AND entity_id = entityEntityId;     
         
 	RETURN helpId;
 END
