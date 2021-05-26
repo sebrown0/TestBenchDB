@@ -2,6 +2,7 @@ SELECT * FROM test_bench.test_run;
 SELECT * FROM test_bench.test_suite  ORDER BY id DESC;
 SELECT * FROM test_bench.entity_test;
 SELECT * FROM test_bench.entity_test ORDER BY id DESC;
+SELECT * FROM test_bench.entity_test where id < 9000 ORDER BY id DESC;
 SELECT * FROM test_bench.test_run_has_test_suite;
 SELECT * FROM test_bench.test_suite_has_entity_test;
 SELECT * FROM test_bench.test_run;
@@ -13,7 +14,7 @@ CALL generate_tests_for_test_run('3','C:/ProgramData/MySQL/MySQL Server 8.0/Uplo
 
 CALL get_test_runs();
 CALL get_test_suites();
-CALL get_test_suites_children(9000);
+CALL get_test_suites_children(30);
 
 INSERT INTO `test_bench`.`test_run` (`id`, `test_run_name`, `comments`) VALUES (1, 'Dakar Web - All', NULL);
 INSERT INTO `test_bench`.`test_run_has_test_suite` (`test_suite_id`, `test_suite_row_id`, `test_run_id`) VALUES (1, 1, 1);

@@ -3,7 +3,7 @@ BEGIN
 	DECLARE rowId INT UNSIGNED;
     DECLARE entId INT UNSIGNED;
     
-	SELECT 		id 
+	SELECT 		max(id) 
     INTO 		rowId
 	FROM 		test_bench.entity 
 	WHERE 		id < 9000
@@ -11,7 +11,7 @@ BEGIN
     
     IF rowId = NULL THEN SET rowId = 0; END IF;
     
-    SELECT 		entity_id 
+    SELECT 		max(entity_id) 
     INTO 		entId
 	FROM 		test_bench.entity 
 	WHERE 		id < 9000

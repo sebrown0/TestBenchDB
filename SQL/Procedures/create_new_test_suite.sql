@@ -1,7 +1,7 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_test_suite`(
 	IN id INT UNSIGNED, 
 	IN testSuiteId INT UNSIGNED, 
-	IN testSuiteName VARCHAR(100), 
+	IN testSuiteName VARCHAR(250), 
     IN testSuiteNotes TEXT,
 	IN parentId INT UNSIGNED,
     IN testSuiteParentId INT UNSIGNED,

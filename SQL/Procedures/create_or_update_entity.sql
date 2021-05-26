@@ -28,7 +28,9 @@ BEGIN
         entity_help_id = entityHelpId, 
         parent_id = entityParentId, 
         parent_entity_id = entityParentEntityId,
-        is_element = isElement;
-        
+        is_element = isElement;        
+	
 	SET foreign_key_checks = 1;
+    
+    CALL create_or_update_entity_as_element(id, entityId, isElement);
 END

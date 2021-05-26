@@ -37,6 +37,5 @@ BEGIN
 	CALL create_or_update_entity_help(entityRowId ,entityId , hasToolTip, toolTipText, helpFileName, helpText);	
 	CALL create_or_update_entity_details(entityRowId, entityId , entityDesc, creationType, lastTestedDate, lastTestedTime);
 	CALL create_or_update_entity_action(entityRowId, entityId, entityActionTypeId, entityActionDesc, entityActionFunc, entityActionDataIn, entityActionDataOut, entityActionDataExpected);		
-	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld);
-    CALL create_or_update_entity_as_element(entityRowId, entityId, isElement);
+	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld);    
 END

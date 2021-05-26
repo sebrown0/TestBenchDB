@@ -1,37 +1,40 @@
 SELECT * FROM test_bench.entity;
 SELECT * FROM test_bench.entity ORDER BY id DESC;
 SELECT * FROM test_bench.entity WHERE id < 9000 ORDER BY id DESC;
+SELECT * FROM test_bench.entity WHERE entity_id = 329 ORDER BY id DESC;
+SELECT * FROM test_bench.entity WHERE id > 9000 ORDER BY id DESC;
 SELECT * FROM test_bench.entity_type;
 SELECT * FROM test_bench.entity_action;
 SELECT * FROM test_bench.entity_help;
+SELECT * FROM test_bench.entity_help where entity_id = 324;
 SELECT * FROM test_bench.entity_details ORDER BY id DESC;
 SELECT * FROM test_bench.entity_can_have_action;
-SELECT * FROM test_bench.version ORDER BY id DESC;
-SELECT * FROM test_bench.version WHERE version_type = 'ENTITY' AND entity_name = 'Card';
-SELECT * FROM test_bench.version WHERE version_type = 'ENTITY' AND id = 9019;
-SELECT * FROM test_bench.version WHERE id = 435;
-SELECT * FROM test_bench.entity_has_version;
-SELECT * FROM test_bench.entity_has_version WHERE version_id = 437;
-SELECT * FROM test_bench.entity_todo;
+SELECT * FROM test_bench.entity_can_have_action where entity_id = 321;
 
-SELECT * FROM test_bench.entity WHERE id = 9020;
+SELECT * FROM test_bench.entity_todo;
+SELECT * FROM test_bench.entity WHERE id = 331;
+SELECT * FROM test_bench.entity WHERE entity_id = 331;
 SELECT * FROM test_bench.entity_action WHERE entity_id = 107;
 SELECT * FROM test_bench.entity_action WHERE id = 94;
 SELECT * FROM test_bench.entity_action WHERE entity_action_data_expected = '#INF#';
 
-CALL get_entity_with_details(9019,9019);
+CALL delete_entity_and_tests(323,33);
 
+CALL get_entity_with_details(149,149);
+select get_entity_details_id(152, 152);    
 CALL create_or_update_entity_version(9019,9019,'Container','',1,0,0);
 SELECT get_entity_has_ver(9019, 9019, 1, 0, 0);
 SET @vID = 0;
 CALL create_or_update_version(@vID, 9019, 9019, 'Container', '', 'ENTITY', 1, 0, 0); 
 
-select * from entity e join entity_help h on e.id = h.entity_id and e.entity_help_id = h.id where e.entity_id=16;
+select * from entity e join entity_help h on e.id = h.entity_id and e.entity_help_id = h.id where e.entity_id=30;
 call get_version_info_for_entity(1);
-CALL delete_entity(136,135);
-CALL delete_entity_and_tests(136,135);
 
+
+ROLLBACK;
 SET foreign_key_checks = 0;
+DELETE FROM `test_bench`.`entity` WHERE (`id` = '9047') and (`entity_id` = '31');
+SET foreign_key_checks = 1;
 SET @rId = get_next_entity_row_id();
 SET @eId = get_next_entity_id();
 
@@ -103,11 +106,3 @@ INSERT INTO `test_bench`.`entity` (`id`, `entity_id`, `entity_name`, `entity_typ
 VALUES (2, 1, 'root', 1, 1, 'Root', 1, NULL, NULL);
 SET foreign_key_checks = 1;
 
-create_or_update_entity_version`(9019,9019,'','',1,0,0);			
-	IN entityRowId INT UNSIGNED, 
-    IN entityEntityId INT UNSIGNED, 
-    IN entityName VARCHAR(200),
-    IN versionNote TEXT,
-    IN mjr INT UNSIGNED,
-    IN mnr INT UNSIGNED,
-    IN bld INT UNSIGNED
