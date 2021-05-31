@@ -5,35 +5,33 @@ BEGIN
 	SET @fileNameAndPath := concat(filePath, "/", "TR_", testRunId, "_", @runName, "_", @dateAndTime, ".csv");	
 	
 	CALL create_temp_table_for_tests_in_test_run(testRunId);
-    
+
     SET @q1 := concat("
 	SELECT 
-			'id', 'test_run_id', 'test_suite_name', 'test_suite_row_id', 'test_suite_id',
-            'entity_test_row_id', 'entity_test_id', 'version_number', 
-            'entity_id', 'entity_entity_id', 'entity_name', 'entity_type',
-            'entity_last_tested_date', 'entity_last_tested_time',
-            'entity_test_name', 'description', 'created_on', 
-            'test_function', 'data_in', 'data_out', 'data_expected', 
+			'id', 'test_run_id', 'test_suite_name', 'test_suite_row_id', 'test_suite_version',
+            'pass_fail_or_not_run', 'fail_severity', 'fail_reason', 'test_complete_notes',
+            'entity_test_name', 'entity_test_version', 'test_description', 'test_function', 'data_in', 'data_out', 'data_expected', 
+            'entity_test_row_id', 'entity_test_id', 'parent_test_row_id', 'parent_test_id', 'entity_row_id', 'entity_id', 'entity_parent_row_id', 'entity_parent_entity_id',             
+            'test_last_run_date', 'test_last_run_time', 'failure_halts_test', 
+            'entity_name', 'entity_version', 'entity_type', 'entity_last_tested_date', 'entity_last_tested_time', 
             'has_tool_tip', 'tool_tip_text',
-            'failure_halts_test', 'created_by_employee_id', 'last_run_date', 'last_run_time', 'parent_test_row_id', 'parent_test_id',            
-			'run_by', 'pass_fail_or_not_run', 'fail_severity', 'fail_reason', 'test_complete_notes', 'endl'  
+			'run_by', 'test_created_by', 'endl'  
+            
 	UNION ALL
 	(
 	SELECT 
-			'NULL',", testRunId, ", test_suite_name, test_suite_row_id, test_suite_id,
-			entity_test_id, entity_test_id, version_number, 
-			entity_id, entity_entity_id, 
-            entity_name, entity_type_entity_type_name,
-            last_tested_date, last_tested_time,
-            entity_test_name, description, created_on, 
-            test_function, data_in, data_out, data_expected, 
+			'NULL',", testRunId, ", test_suite_name, test_suite_row_id, test_suite_version,
+            '', '', '', '',
+			entity_test_name, entity_test_version, test_description, test_function, data_in, data_out, data_expected, 
+            entity_test_row_id, entity_test_id, parent_test_row_id, parent_test_id, entity_row_id, entity_id, entity_parent_row_id, entity_parent_entity_id,             
+            test_last_run_date, test_last_run_time, failure_halts_test, 
+            entity_name, entity_version, entity_type, entity_last_tested_date, entity_last_tested_time,             
             has_tool_tip, tool_tip_text,
-            failure_halts_test, created_by_employee_id, last_run_date, last_run_time, parent_test_row_id, parent_test_id,
-            'SB_1', '', '', '', 'Test Complete Notes', 'NULL'  	
+            'SB_1', test_created_by, 'endl'              
 	INTO OUTFILE '", @fileNameAndPath, "'
 	FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '' 
 	LINES TERMINATED BY '\n'
-	FROM temp_ts_and_its_children tests);");	                   
+	FROM test_suites_and_test_cases_in_test_run tests);");	                   
                     
     PREPARE s1 FROM @q1;
     EXECUTE s1; DEALLOCATE PREPARE s1;
