@@ -1,7 +1,7 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity`(
 	IN id INT UNSIGNED, 
 	IN entityId INT UNSIGNED, 
-	IN entityName VARCHAR(100), 
+	IN entityName VARCHAR(250), 
     IN entityDetailsId INT UNSIGNED, 
 	IN entityTypeName VARCHAR(45), 
     IN entityHelpId INT UNSIGNED, 
@@ -10,10 +10,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity`(
 	IN isElement TINYINT)
 BEGIN
 	DECLARE entityTypeId INT;
+SELECT entityDetailsId;
         
     SET foreign_key_checks = 0;     
     SET entityTypeId = get_entity_type_id_for_name(entityTypeName);
 
+    
     INSERT INTO `test_bench`.`entity` (
 		`id`, `entity_id`, `entity_name`, `entity_details_id`, `entity_type_id`, `entity_type_entity_type_name`, `entity_help_id`, 
         `parent_id`, `parent_entity_id`, `is_element`)

@@ -2,7 +2,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
 	-- Entity
 	IN entityRowId INT UNSIGNED, 
 	IN entityId INT UNSIGNED, 
-	IN entityName VARCHAR(100),     
+	IN entityName VARCHAR(250),     
     IN entityDetailsId INT UNSIGNED, 
 	IN entityTypeName VARCHAR(45),     
     IN entityHelpId INT UNSIGNED, 
@@ -33,9 +33,21 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     IN bld INT UNSIGNED
     )
 BEGIN
-	CALL create_or_update_entity(entityRowId, entityId , entityName, entityDetailsId, entityTypeName, entityHelpId, entityParentId, entityParentEntityId, isElement);
-	CALL create_or_update_entity_help(entityRowId ,entityId , hasToolTip, toolTipText, helpFileName, helpText);	
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		ROLLBACK;
+        SELECT "FAILED TO CREATE ENTITY";
+        SET autocommit = 1;
+	END;
+    
+    SET autocommit = 0;
+    START TRANSACTION;		
 	CALL create_or_update_entity_details(entityRowId, entityId , entityDesc, creationType, lastTestedDate, lastTestedTime);
+    CALL create_or_update_entity(entityRowId, entityId , entityName, get_entity_details_id_for_entity(entityRowId), entityTypeName, entityHelpId, entityParentId, entityParentEntityId, isElement);	
+    CALL create_or_update_entity_help(entityRowId ,entityId , hasToolTip, toolTipText, helpFileName, helpText);		
 	CALL create_or_update_entity_action(entityRowId, entityId, entityActionTypeId, entityActionDesc, entityActionFunc, entityActionDataIn, entityActionDataOut, entityActionDataExpected);		
 	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld);    
+	-- COMMIT;
+    SELECT "ADDED OR UPDATED ENTITY";
+    SET autocommit = 1;
 END

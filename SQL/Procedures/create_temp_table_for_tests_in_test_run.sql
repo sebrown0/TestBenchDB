@@ -26,13 +26,13 @@ BEGIN
 	FROM 		test_suite_has_child_suites ts1
     INNER JOIN 	test_suite_has_child_suites ts2 
 			ON 	ts1.test_suite_id = ts2.test_suite_id
-	GROUP BY 	ts2.test_suite_id
+	GROUP BY 	ts2.test_suite_id, ts2.test_suite_id, ts2.test_suite_name
 	ORDER BY 	ts2.test_suite_id;
     
     -- Add the test cases to the included test suites
     DROP TABLE IF EXISTS 	test_run_has_test_suites_and_test_cases;
     CREATE TEMPORARY TABLE	test_run_has_test_suites_and_test_cases
-	SELECT 			MAX(test.id) AS id, test_suite_name
+	SELECT 			MAX(test.id) AS id, tr_has_ts.test_suite_name
 	FROM 			test_run_has_test_suites 
 					tr_has_ts	
 	INNER JOIN 		test_suite_has_entity_test 
@@ -41,7 +41,7 @@ BEGIN
 	INNER JOIN 		entity_test 
 					test
 			ON		test.id = ts_has_test.entity_test_id AND test.entity_test_id = ts_has_test.entity_test_entity_test_id
-    GROUP BY		test.entity_test_id
+    GROUP BY		test.entity_test_id, tr_has_ts.test_suite_name
     ORDER BY 		test.id;	
 
 	-- Get the details of the tests

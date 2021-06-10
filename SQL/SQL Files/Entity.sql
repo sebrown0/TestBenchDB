@@ -2,27 +2,30 @@ SELECT * FROM test_bench.entity;
 SELECT count(*) FROM test_bench.entity;
 SELECT * FROM test_bench.entity ORDER BY id DESC;
 SELECT * FROM test_bench.entity WHERE id < 9000 ORDER BY id DESC;
-SELECT * FROM test_bench.entity WHERE id = 8;
+SELECT * FROM test_bench.entity WHERE id = 130;
 SELECT * FROM test_bench.entity WHERE id > 9000 ORDER BY id DESC;
+SELECT * FROM test_bench.entity WHERE entity_name = 'DkGrToolbar';
 SELECT * FROM test_bench.entity_type;
 SELECT * FROM test_bench.entity_action;
-SELECT * FROM test_bench.entity_action where id = 333;
+SELECT * FROM test_bench.entity_action where id = 614;
+SELECT * FROM test_bench.entity_action where entity_id = 130;
 SELECT * FROM test_bench.entity_help;
-SELECT * FROM test_bench.entity_help where entity_id = 324;
+SELECT * FROM test_bench.entity_help where entity_id = 9077;
 SELECT * FROM test_bench.entity_details ORDER BY id DESC;
-SELECT * FROM test_bench.entity_details where id = 356;
+SELECT * FROM test_bench.entity_details where id = 647;
+SELECT * FROM test_bench.entity_details where ENTITY_id = 559	;
 SELECT * FROM test_bench.entity_can_have_action;
-SELECT * FROM test_bench.entity_can_have_action where entity_id = 321;
+SELECT * FROM test_bench.entity_can_have_action where entity_id = 663;
 
 SELECT * FROM test_bench.entity_todo;
-SELECT * FROM test_bench.entity WHERE id = 108;
+SELECT * FROM test_bench.entity WHERE id = 150;
 SELECT * FROM test_bench.entity WHERE entity_id = 331;
-SELECT * FROM test_bench.entity_action WHERE entity_id = 107;
+SELECT * FROM test_bench.entity_action WHERE entity_id = 9047;
 SELECT * FROM test_bench.entity_action WHERE id = 94;
 SELECT * FROM test_bench.entity_action WHERE entity_action_data_expected = '#INF#';
 
 /*
-CALL delete_entity_and_tests(323,33);
+CALL delete_entity_and_tests(147,147);
 
 CALL get_entity_with_details(149,149);
 select get_entity_details_id(152, 152);    
