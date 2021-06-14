@@ -7,21 +7,21 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity`(
     IN entityHelpId INT UNSIGNED, 
     IN entityParentId INT UNSIGNED,
     IN entityParentEntityId INT UNSIGNED,
-	IN isElement TINYINT)
+	IN isElement TINYINT,
+    IN issueStatusId INT)
 BEGIN
 	DECLARE entityTypeId INT;
 SELECT entityDetailsId;
         
     SET foreign_key_checks = 0;     
     SET entityTypeId = get_entity_type_id_for_name(entityTypeName);
-
     
     INSERT INTO `test_bench`.`entity` (
 		`id`, `entity_id`, `entity_name`, `entity_details_id`, `entity_type_id`, `entity_type_entity_type_name`, `entity_help_id`, 
-        `parent_id`, `parent_entity_id`, `is_element`)
+        `parent_id`, `parent_entity_id`, `is_element`, `issue_status_id`)
     VALUES 	(
 		id, entityId, entityName, entityDetailsId, entityTypeId, entityTypeName, entityHelpId, 
-        entityParentId, entityParentEntityId, isElement)
+        entityParentId, entityParentEntityId, isElement, issueStatusId)
     ON DUPLICATE KEY UPDATE
 		entity_name = entityName, 
         entity_details_id = entityDetailsId, 
@@ -30,9 +30,9 @@ SELECT entityDetailsId;
         entity_help_id = entityHelpId, 
         parent_id = entityParentId, 
         parent_entity_id = entityParentEntityId,
-        is_element = isElement;        
+        is_element = isElement,
+        issue_status_id = issueStatusId;        
 	
-	SET foreign_key_checks = 1;
-    
+	SET foreign_key_checks = 1;    
     CALL create_or_update_entity_as_element(id, entityId, isElement);
 END

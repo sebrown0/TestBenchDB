@@ -1,4 +1,4 @@
-SET @TEST_RUN_ID_FOR_THIS_QUERY = 2;
+SET @TEST_RUN_ID_FOR_THIS_QUERY = 7;
 SELECT 
 	tr.id AS "Test Run ID", tr.test_run_name AS "Test Run Name", tr.comments AS "Comments",
     run_res.test_run_run_by_employee_id AS "Run By", run_res.result_timestamp AS "Run On", run_res.number_test_cases_run AS "Num Run", 
@@ -10,8 +10,8 @@ WHERE tr.id = @TEST_RUN_ID_FOR_THIS_QUERY;
 
 CALL get_test_run_report(@TEST_RUN_ID_FOR_THIS_QUERY);
 CALL get_latest_test_run_report(@TEST_RUN_ID_FOR_THIS_QUERY);
-CALL get_test_results_for_run_by_category(@TEST_RUN_ID_FOR_THIS_QUERY,'FAIL',0);
-CALL get_test_results_for_run_by_category(@TEST_RUN_ID_FOR_THIS_QUERY,'QP',1);
+CALL get_test_results_for_run_by_category(@TEST_RUN_ID_FOR_THIS_QUERY,'FAIL',1);
+CALL get_test_results_for_run_by_category(@TEST_RUN_ID_FOR_THIS_QUERY,'QP',0);
 CALL get_test_results_for_run_by_category(@TEST_RUN_ID_FOR_THIS_QUERY,'NR',0);
 CALL get_test_results_for_run_by_category(@TEST_RUN_ID_FOR_THIS_QUERY,'PASS',0);
 
