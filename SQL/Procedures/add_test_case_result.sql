@@ -39,4 +39,5 @@ BEGIN
     CALL update_entity_test_last_run(entityTestRowId, entityTestId, entityRowId, entityId, dateRun, timeRun);
     CALL update_entity_last_tested(entityRowId, entityId, dateRun, timeRun);
     CALL update_entity_test_data(entityTestRowId, entityTestId, dataIn, dataOut, dataExpected, testsFunction);
+    CALL update_entity_issue_status(testPassed, entityRowId, entityId);
 END

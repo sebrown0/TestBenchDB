@@ -8,7 +8,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
     IN lastRunDate DATE, IN lastRunTime TIME)
 BEGIN   
     DECLARE noExisting INT UNSIGNED;
-	
+	DECLARE hasParent TINYINT;
+    
     -- Create the entity test    
     SET FOREIGN_KEY_CHECKS=0;
 	INSERT INTO 
@@ -29,14 +30,14 @@ BEGIN
         failure_halts_test = failureHaltsTest,
         last_run_date = lastRunDate,
         last_run_time = lastRunTime;
-	SET FOREIGN_KEY_CHECKS=1;
-	
-    IF parentId > 0 THEN
+		
+    IF parentId > 0 AND test_suite_exists(parentId) THEN
 		INSERT INTO `test_bench`.`test_suite_has_entity_test` (
 			`test_suite_row_id`, `test_suite_id`, `entity_test_id`, `entity_test_entity_test_id`, `entity_test_entity_id`, `entity_test_entity_entity_id`) 
 		VALUES (
 			parentId, parentEntityTestId, id, entityTestId, entityId, entityEntityId);
 	END IF;
+    SET FOREIGN_KEY_CHECKS=1;
     
 	-- Create the version 
 	CALL add_version(entityTestId, entityTestName, 'TEST', get_max_ver_for_entity_test(entityTestId), newVerCat,  @nextVersionId);    

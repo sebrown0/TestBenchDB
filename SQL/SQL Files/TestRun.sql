@@ -14,7 +14,7 @@ SELECT test_run_id, test_suite_row_id, test_suite_id FROM test_run_has_test_suit
 SELECT id, entity_test_id, entity_id, entity_entity_id, entity_test_name,    parent_test_row_id, parent_test_id FROM test_bench.entity_test;
 SELECT * FROM test_bench.test_suite WHERE id = 144;
 
--- CALL generate_tests_for_test_run('8','C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/test_bench/data/test_run_files');
+-- CALL generate_tests_for_test_run('7','C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/test_bench/data/test_run_files');
 CALL create_temp_table_for_tests_in_test_run(5);
 select @@sql_mode;
 

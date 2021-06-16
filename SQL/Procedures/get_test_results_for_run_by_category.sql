@@ -38,7 +38,7 @@ BEGIN
 			ON	ent.id = test.entity_id AND ent.entity_id = test.entity_entity_id
 	INNER JOIN	issue_status 
 				stat
-			ON	stat.id = ent.issue_status_id
+			ON	stat.status_id = ent.issue_status_id
 	WHERE 		run_res.id = get_max_test_run_result_id_for_tr(testRunId) 
     AND 		test_res.test_passed = resCategory 
     AND 		NOT (test_res.fail_reason LIKE excludedReason OR test.entity_test_name LIKE excludedText)
