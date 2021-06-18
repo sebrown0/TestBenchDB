@@ -1,7 +1,7 @@
 -- 0 
 -- SET VARS
 SET @entTypeId = get_next_entity_type_id();
-SET @entTypeName = 'Visual Inspection';
+SET @entTypeName = 'EmployeeSearch';
 SET @entTypePrntId = 1; 						-- 1 = Root
 SET @entTypeHasChildren = NULL;					-- string '1,99,129 etc' ** CAN BE NULL **
 SET @assignDefltFailReasons = TRUE;
@@ -22,4 +22,4 @@ CALL assign_child_entity_type_to_parent();
 -- SELECT * FROM entity_type_fail_reason;
 -- SELECT * FROM entity_type_has_fail_reason;
 -- SELECT * FROM entity_type;
--- SELECT id, parent_entity_type_id, entity_type_parent_name, child_entity_type_id, entity_type_child_name FROM entity_type_has_child WHERE parent_entity_type_id = 91;
+-- SELECT id, parent_entity_type_id, entity_type_parent_name, child_entity_type_id, entity_type_child_name FROM entity_type_has_child WHERE parent_entity_type_id = 51;

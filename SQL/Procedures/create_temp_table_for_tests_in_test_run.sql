@@ -41,13 +41,12 @@ BEGIN
 	INNER JOIN 		entity_test 
 					test
 			ON		test.id = ts_has_test.entity_test_id AND test.entity_test_id = ts_has_test.entity_test_entity_test_id
-    GROUP BY		test.entity_test_id, tr_has_ts.test_suite_name
+    GROUP BY		test.entity_test_id, tr_has_ts.test_suite_name, test.id
     ORDER BY 		test.id;	
 
 	-- Get the details of the tests
 	DROP TABLE IF EXISTS 	test_suites_and_test_cases_in_test_run;
-    CREATE TEMPORARY TABLE	test_suites_and_test_cases_in_test_run
-    
+    CREATE TEMPORARY TABLE	test_suites_and_test_cases_in_test_run    
 	SELECT 			tr_has_ts_and_tc.test_suite_name, get_ver_of_test_suite(tr_has_ts_and_tc.id) AS test_suite_version, tr_has_ts_and_tc.id AS test_suite_row_id,
 					test.id AS entity_test_row_id, test.entity_test_id, test.parent_test_row_id, test.parent_test_id, 
                     ent.id AS entity_row_id, ent.entity_id,

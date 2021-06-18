@@ -2,7 +2,7 @@ SELECT * FROM test_bench.entity;
 SELECT count(*) FROM test_bench.entity;
 SELECT * FROM test_bench.entity ORDER BY id DESC;
 SELECT * FROM test_bench.entity WHERE id < 9000 ORDER BY id DESC;
-SELECT * FROM test_bench.entity WHERE id = 130;
+SELECT * FROM test_bench.entity WHERE id = 1063;
 SELECT * FROM test_bench.entity WHERE id > 9000 ORDER BY id DESC;
 SELECT * FROM test_bench.entity WHERE entity_name = 'DkGrToolbar';
 SELECT * FROM test_bench.entity_type;

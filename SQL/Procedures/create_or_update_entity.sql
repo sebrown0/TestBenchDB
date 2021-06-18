@@ -11,8 +11,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity`(
     IN issueStatusId INT)
 BEGIN
 	DECLARE entityTypeId INT;
-SELECT entityDetailsId;
-        
+
     SET foreign_key_checks = 0;     
     SET entityTypeId = get_entity_type_id_for_name(entityTypeName);
     
