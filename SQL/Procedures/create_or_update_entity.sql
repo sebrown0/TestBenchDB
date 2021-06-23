@@ -7,7 +7,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity`(
     IN entityHelpId INT UNSIGNED, 
     IN entityParentId INT UNSIGNED,
     IN entityParentEntityId INT UNSIGNED,
-	IN isElement TINYINT,
+	IN isElement INT UNSIGNED,
     IN issueStatusId INT)
 BEGIN
 	DECLARE entityTypeId INT;

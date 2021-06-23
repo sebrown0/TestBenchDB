@@ -8,7 +8,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     IN entityHelpId INT UNSIGNED, 
     IN entityParentId INT UNSIGNED,
     IN entityParentEntityId INT UNSIGNED,        
-    IN isElement TINYINT,
+    IN isElement INT UNSIGNED,        
     IN issueStatusId INT,
     -- Help
     IN hasToolTip VARCHAR(5),
@@ -31,8 +31,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
     IN versionNote TEXT,
     IN mjr INT UNSIGNED,
     IN mnr INT UNSIGNED,
-    IN bld INT UNSIGNED
-    )
+    IN bld INT UNSIGNED   )
 BEGIN
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN

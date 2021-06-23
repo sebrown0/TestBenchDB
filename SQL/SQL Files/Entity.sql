@@ -25,7 +25,7 @@ SELECT * FROM test_bench.entity_action WHERE id = 94;
 SELECT * FROM test_bench.entity_action WHERE entity_action_data_expected = '#INF#';
 
 /*
-CALL delete_entity_and_tests(147,147);
+CALL delete_entity_and_tests(1206,1203);
 
 CALL get_entity_with_details(149,149);
 select get_entity_details_id(152, 152);    

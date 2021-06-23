@@ -1,8 +1,8 @@
 SELECT * FROM test_run;
-SELECT * FROM test_run_has_test_suite;
+SELECT test_run_id, test_suite_row_id, test_suite_id FROM test_run_has_test_suite;
 SELECT * FROM test_suite  ORDER BY id DESC;
-SELECT * FROM test_suite where id = 3;
-SELECT * FROM entity_test;
+SELECT * FROM test_suite where id = 1058;
+SELECT * FROM entity_test  where id = 1206;
 SELECT * FROM entity_test WHERE entity_test_name = 'Top Level of: Authorisations';
 SELECT * FROM entity_test ORDER BY id DESC;
 SELECT * FROM entity_test where id >=321 ORDER BY id;
@@ -17,8 +17,8 @@ SELECT * FROM test_bench.test_suite WHERE id = 144;
 CALL get_basic_test_details_for_entity(713);
 CALL get_last_run_test_and_test_run();
 
--- CALL generate_tests_for_test_run('9','C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/test_bench/data/test_run_files');
-CALL create_temp_table_for_tests_in_test_run(9);
+-- CALL generate_tests_for_test_run('11','C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/test_bench/data/test_run_files');
+-- CALL create_temp_table_for_tests_in_test_run(11);
 select @@sql_mode;
 
 /*

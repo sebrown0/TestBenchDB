@@ -4,7 +4,7 @@ SELECT MAX(ID) FROM test_bench.entity_test;
  
 SELECT * FROM test_bench.test_suite where id > 321 and test_suite_id = 31;
 
-SELECT * FROM test_bench.test_suite where id = 138;
+SELECT * FROM test_bench.test_suite where id = 12010;
 SELECT * FROM test_bench.test_suite where parent_id = 30 AND test_suite_id = 31;
 SELECT * FROM test_bench.entity_test where parent_test_row_id = 8;
 SELECT * FROM test_bench.entity_test where id = 321;
@@ -15,7 +15,8 @@ SELECT * FROM test_bench.entity_test where id >=321 ORDER BY id;
 SELECT * FROM entity_test_has_version where entity_test_id >= 321 AND entity_test_id < 9000 ;
 SELECT * FROM entity_test_has_version where VERSION_id = 7;
 SELECT * FROM test_suite_has_version where test_suite_id >= 321 AND test_suite_id < 9000 ;
-SELECT * FROM test_suite_has_entity_test where test_suite_row_id >= 321 AND test_suite_row_id < 9000;
+SELECT * FROM test_suite_has_entity_test where test_suite_row_id >= 9000 AND test_suite_row_id < 9000;
+SELECT * FROM test_suite_has_entity_test where test_suite_row_id = 9000;
 CALL get_test_suites_children(30);
 CALL get_test_suites_children(15);
 

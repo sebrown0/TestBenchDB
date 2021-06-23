@@ -1,8 +1,8 @@
 -- 0 
 -- SET VARS
 SET @entTypeId = get_next_entity_type_id();
-SET @entTypeName = 'EmployeeSearch';
-SET @entTypePrntId = 1; 						-- 1 = Root
+SET @entTypeName = 'ElementTestCase';
+SET @entTypePrntId = 151; 						-- 1 = Root
 SET @entTypeHasChildren = NULL;					-- string '1,99,129 etc' ** CAN BE NULL **
 SET @assignDefltFailReasons = TRUE;
 

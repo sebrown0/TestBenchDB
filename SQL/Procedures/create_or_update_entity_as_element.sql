@@ -1,11 +1,11 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity_as_element`(
 	IN entityRowId INT UNSIGNED, 
     IN entityId INT UNSIGNED,
-    IN isElement TINYINT)
+    IN isElement INT UNSIGNED)
 BEGIN
 	DECLARE elementId INT UNSIGNED;
         
-    IF isElement THEN
+    IF isElement > 0 THEN
 		SELECT id INTO elementId FROM element WHERE entity_row_id = entityRowId AND entity_id = entityId;
 			
 		INSERT INTO 
