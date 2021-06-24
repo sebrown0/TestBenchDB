@@ -1,9 +1,11 @@
 SELECT * FROM test_run;
 SELECT test_run_id, test_suite_row_id, test_suite_id FROM test_run_has_test_suite;
 SELECT * FROM test_suite  ORDER BY id DESC;
-SELECT * FROM test_suite where id = 1058;
-SELECT * FROM entity_test  where id = 1206;
-SELECT * FROM entity_test WHERE entity_test_name = 'Top Level of: Authorisations';
+SELECT * FROM test_suite where id = 31;
+SELECT * FROM entity_test  where id = 7;
+SELECT * FROM entity_test  where entity_test_id = 1075;
+SELECT * FROM entity_test WHERE entity_test_name ='User Management - Dakinet Form - Button - Display - DKGrid - DkGrToolbar - DkGrTbSaveGrid';
+
 SELECT * FROM entity_test ORDER BY id DESC;
 SELECT * FROM entity_test where id >=321 ORDER BY id;
 SELECT * FROM entity_test where entity_id = 713;

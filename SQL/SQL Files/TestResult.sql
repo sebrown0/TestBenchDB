@@ -1,9 +1,9 @@
 SELECT * FROM test_bench.test_run_result;
 SELECT * FROM test_bench.entity_test;
-SELECT * FROM test_bench.entity_test_result where entity_test_id=473;
+SELECT * FROM test_bench.entity_test_result where entity_test_id=115;
 SELECT * FROM test_bench.entity_test_result;
-SELECT * FROM test_bench.entity_test where id = 1058;
-SELECT * FROM test_suite where id = 12500;
+SELECT * FROM test_bench.entity_test where id = 10250;
+SELECT * FROM test_suite where id = 10006;
 
 SELECT max(tr_res.id) FROM test_run_result tr_res WHERE tr_res.test_run_id = 4;
 select get_max_test_run_result_id_for_tr(99);
