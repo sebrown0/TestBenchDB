@@ -4,7 +4,7 @@ BEGIN
     SET @dateAndTime := concat(date_format(CURRENT_DATE,'%d-%m-%Y'), "_", time_format(CURRENT_TIME,'%H%i%S'));
 	SET @fileNameAndPath := concat(filePath, "/", "TR_", testRunId, "_", @runName, "_", @dateAndTime, ".csv");	
 	
-	CALL create_temp_table_for_tests_in_test_run(testRunId);
+    CALL get_all_test_suites_in_test_run(testRunId);
 
     SET @q1 := concat("
 	SELECT 
@@ -31,7 +31,7 @@ BEGIN
 	INTO OUTFILE '", @fileNameAndPath, "'
 	FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '' 
 	LINES TERMINATED BY '\n'
-	FROM test_suites_and_test_cases_in_test_run tests);");	                   
+	FROM view_test_suites_and_test_cases_in_test_run tests);");	                   
                     
     PREPARE s1 FROM @q1;
     EXECUTE s1; DEALLOCATE PREPARE s1;

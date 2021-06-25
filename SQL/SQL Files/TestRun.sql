@@ -19,7 +19,7 @@ SELECT * FROM test_bench.test_suite WHERE id = 144;
 CALL get_basic_test_details_for_entity(713);
 CALL get_last_run_test_and_test_run();
 
--- CALL generate_tests_for_test_run('11','C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/test_bench/data/test_run_files');
+-- CALL generate_tests_for_test_run('10','C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/test_bench/data/test_run_files');
 -- CALL create_temp_table_for_tests_in_test_run(11);
 select @@sql_mode;
 
