@@ -1,2 +1,0 @@
-id,entity_test_id,entity_test_name,entity_id,entity_entity_id,created_by_employee_id,description,initial_value,expected_value,received_value,insert_value,failure_halts_test,test_category_primary,test_category_secondary,max_current_version_number,new_version_category,test_created,parent_id,parent_entity_test_id,endl
-1,1,Root - Top Level Test Case,1,1,SB_1,sjksdjksdjksd,0,,,,1,1,,,MAJOR,2021-05-05,\N,\N,\N
