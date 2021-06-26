@@ -1,2 +1,2 @@
-cd C:\ProgramData\MySQL\MySQL Server 8.0\Backup\test_bench
-mysqldump -u root -p test_bench > "C:\ProgramData\MySQL\MySQL Server 8.0\Backup\test_bench\tb_dump.sql"
+cd C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\test_bench\TB_Data\table_dump
+mysqldump -u root -p test_bench > "C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\test_bench\TB_Data\table_dump\tb_dump.sql"
