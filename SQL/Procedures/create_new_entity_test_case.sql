@@ -38,6 +38,11 @@ BEGIN
 				`test_suite_row_id`, `test_suite_id`, `entity_test_id`, `entity_test_entity_test_id`, `entity_test_entity_id`, `entity_test_entity_entity_id`) 
 			VALUES (
 				parentId, parentEntityTestId, id, entityTestId, entityId, entityEntityId);
+		ELSEIF parentId IS NULL OR parentId = 0 THEN
+			INSERT INTO `test_bench`.`test_suite_has_entity_test` (
+				`test_suite_row_id`, `test_suite_id`, `entity_test_id`, `entity_test_entity_test_id`, `entity_test_entity_id`, `entity_test_entity_entity_id`) 
+			VALUES (
+				id, entityTestId, id, entityTestId, entityId, entityEntityId);
 		END IF;
 		SET FOREIGN_KEY_CHECKS=1;
 		
