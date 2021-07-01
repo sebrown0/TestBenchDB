@@ -5,7 +5,7 @@ USE test_bench;
 SET @versionNote = "";
 
 TRUNCATE data_test_suite_insert;
-LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\initial_data\\data_test_suite_insert.csv"
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\import\\data_test_suite_insert.csv"
 INTO TABLE data_test_suite_insert 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
