@@ -1,6 +1,6 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `add_version`(
 	IN entityId INT UNSIGNED, 
-    IN entityName VARCHAR(200),
+    IN entityName VARCHAR(500),
     IN entityVersionType ENUM('ENTITY', 'TEST', 'TEST_SUITE'),
     IN ver VARCHAR(11),
     IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'),

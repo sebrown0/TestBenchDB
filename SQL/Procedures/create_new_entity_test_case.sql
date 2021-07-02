@@ -1,6 +1,6 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
 	IN id INT UNSIGNED, IN entityTestId INT UNSIGNED, IN entityId INT UNSIGNED, IN entityEntityId INT UNSIGNED, 
-	IN entityTestName VARCHAR(200), IN createdByEmployeeId VARCHAR(45), IN entityTestDesc VARCHAR(1000), 
+	IN entityTestName VARCHAR(500), IN createdByEmployeeId VARCHAR(45), IN entityTestDesc VARCHAR(1000), 
     IN testFunction VARCHAR(1000), IN dataIn VARCHAR(1000), IN dataOut VARCHAR(1000), IN dataExpected VARCHAR(1000), 
     IN failureHaltsTest TINYINT, IN primaryTestCat VARCHAR(1000), IN secondaryTestCat VARCHAR(1000),
     IN testCreated DATE, IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'), 

@@ -1,7 +1,7 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity_version`(			
 	IN entityRowId INT UNSIGNED, 
     IN entityEntityId INT UNSIGNED, 
-    IN entityName VARCHAR(250),
+    IN entityName VARCHAR(500),
     IN versionNote TEXT,
     IN mjr INT UNSIGNED,
     IN mnr INT UNSIGNED,

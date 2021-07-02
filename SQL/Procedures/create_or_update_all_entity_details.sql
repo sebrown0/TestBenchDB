@@ -2,7 +2,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_all_entity_details
 	-- Entity
 	IN entityRowId INT UNSIGNED, 
 	IN entityId INT UNSIGNED, 
-	IN entityName VARCHAR(250),     
+	IN entityName VARCHAR(500),     
     IN entityDetailsId INT UNSIGNED, 
 	IN entityTypeName VARCHAR(45),     
     IN entityHelpId INT UNSIGNED, 

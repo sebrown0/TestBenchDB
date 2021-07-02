@@ -1,2 +1,6 @@
+'Home
 cd C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\test_bench\TB_Data\table_dump
 mysqldump -u root -p test_bench > "C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\test_bench\TB_Data\table_dump\tb_dump.sql"
+'Office
+cd "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
+mysqldump -u root -p test_bench > "C:\ProgramData\MySQL\MySQL Server 8.0\Data\TB_Data\table_dump\tb_dump.sql"

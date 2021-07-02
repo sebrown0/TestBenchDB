@@ -2,7 +2,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_version`(
 	INOUT verID INT UNSIGNED, 
 	IN entityRowId INT UNSIGNED, 
     IN entityId INT UNSIGNED, 
-    IN entityName VARCHAR(250),
+    IN entityName VARCHAR(500),
     IN versionNote TEXT,
     IN entityVersionType ENUM('ENTITY', 'TEST', 'TEST_SUITE'),
     IN mjr INT UNSIGNED,
