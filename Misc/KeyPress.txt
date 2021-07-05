@@ -1,0 +1,16 @@
+"^{q}", "SaveEntity"
+"^{h}", "HighLightGroup"
+"^+{r}", "ResetEntitySheet"
+"^+{t}", "GotoTodo"
+
+"^+{e}", "ShowElementCategories"
+"^+{b}", "GotoLastSelected"
+
+"^{UP}", "GotoParent"
+"^{DOWN}", "GotoLastRow"
+
+"^+{+}", "GetNextID"
+"^+{-}", "CheckNextID"
+
+"^+{v}", "LoadVersions"
+"^+{a}", "UpdateEntityAction"
