@@ -11,7 +11,7 @@ BEGIN
 	DECLARE hasParent TINYINT;
     
     -- If it's an existing element we don't update.
-	IF NOT test_case_exists_as_element(id) THEN
+	IF NOT test_case_exists(id) AND NOT test_case_exists_as_element(id) THEN
 		-- Create the entity test    
 		SET FOREIGN_KEY_CHECKS=0;
 		INSERT INTO 
