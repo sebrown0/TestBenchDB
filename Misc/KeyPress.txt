@@ -7,7 +7,7 @@
 "^+{b}", "GotoLastSelected"
 
 "^{UP}", "GotoParent"
-"^{DOWN}", "GotoLastRow"
+"^{DOWN}", "GotoLastRow" -> or insert test suite in test run on TestRun sheet
 
 "^+{+}", "GetNextID"
 "^+{-}", "CheckNextID"
