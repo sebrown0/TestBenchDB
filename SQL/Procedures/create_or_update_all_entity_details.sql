@@ -47,6 +47,7 @@ BEGIN
     CALL create_or_update_entity_help(entityRowId ,entityId , hasToolTip, toolTipText, helpFileName, helpText);		
 	CALL create_or_update_entity_action(entityRowId, entityId, entityActionTypeId, entityActionDesc, entityActionFunc, entityActionDataIn, entityActionDataOut, entityActionDataExpected);		
 	CALL create_or_update_entity_version(entityRowId, entityId , entityName, versionNote, mjr, mnr, bld);    
+    CALL check_entity_place_holders(entityActionDataIn, entityActionDataOut, entityActionDataExpected);
 	COMMIT;
     SET @WriteOk = TRUE;
     SET autocommit = 1;

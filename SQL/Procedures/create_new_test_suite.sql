@@ -9,12 +9,12 @@ BEGIN
 	-- If it exists or it's an existing element we don't create.
 	IF NOT test_suite_exists(id) AND NOT test_suite_exists_as_element(id) THEN
 		-- Create the version.
-		CALL add_version(testSuiteId, testSuiteName, 'TEST_SUITE', '1.0.0', 'MAJOR',  @nextVersionId);
+		CALL add_version(testSuiteId, testSuiteName, 'TEST_SUITE', get_max_ver_for_test_suite(testSuiteId), 'MAJOR',  @nextVersionId);  		
 
 		-- Create the test suite
 		-- With the latest version id of the parent.
 		SET foreign_key_checks = 0;
-		
+		        
 		INSERT INTO `test_bench`.`test_suite_has_version` 
 			(`version_id`, `test_suite_id`, `test_suite_test_suite_id`) 
 		VALUES 
