@@ -10,11 +10,11 @@ BEGIN
     DECLARE noExisting INT UNSIGNED;
 	DECLARE hasParent TINYINT;
     
-    -- If it's an existing element we don't update.
+    -- If it's an existing test or element we don't add it.
 	IF NOT test_case_exists(id) AND NOT test_case_exists_as_element(id) THEN
 		-- Create the entity test    
 		SET FOREIGN_KEY_CHECKS=0;
-		INSERT INTO 
+		INSERT INTO  
 			`test_bench`.`entity_test` ( 
 			`id`, `entity_test_id`, `entity_id`, `entity_entity_id`, `entity_test_name`, `description`, `created_on`, 
 			`test_function`, `data_in`, `data_out`, `data_expected`, 
