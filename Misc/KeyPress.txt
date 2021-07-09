@@ -6,9 +6,13 @@
 "^+{e}", "ShowElementCategories"
 "^+{b}", "GotoLastSelected"
 
+"^+{m}", "MarkRow"
+
 "^{UP}", "GotoParent"
 "^{DOWN}", "GotoLastRow" -> or insert test suite in test run on TestRun sheet
 
+"^+{c}", "InsertChild"
+"^+{d}", "UpdateEntityDetails"
 "^+{+}", "GetNextID"
 "^+{-}", "CheckNextID"
 
