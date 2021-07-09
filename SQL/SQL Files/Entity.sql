@@ -2,7 +2,7 @@ SELECT * FROM test_bench.entity;
 SELECT count(*) FROM test_bench.entity;
 SELECT * FROM test_bench.entity ORDER BY id DESC;
 SELECT * FROM test_bench.entity WHERE id < 9000 ORDER BY id DESC;
-SELECT * FROM test_bench.entity WHERE id = 10717;			
+SELECT * FROM test_bench.entity WHERE id = 10670;			
 SELECT * FROM test_bench.entity WHERE id >= 1000 and id <= 1100;			;
 SELECT * FROM test_bench.element WHERE entity_row_id = 10119;
 SELECT * FROM test_bench.entity WHERE id > 9000 ORDER BY id DESC;

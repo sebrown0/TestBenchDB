@@ -4,7 +4,7 @@ SELECT MAX(ID) FROM test_bench.entity_test;
  
 SELECT * FROM test_bench.test_suite where id > 321 and test_suite_id = 31;
 
-SELECT * FROM test_bench.test_suite where id = 10463;
+SELECT * FROM test_bench.test_suite where id = 10670;
 SELECT * FROM test_bench.test_suite where parent_id = 30 AND test_suite_id = 31;
 SELECT * FROM test_bench.entity_test where parent_test_row_id = 8;
 SELECT * FROM test_bench.entity_test where id = 14043;
