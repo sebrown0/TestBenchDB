@@ -1,5 +1,7 @@
-SET @oldVal = 'Container - Generic Buttons 6';
-SET @newVal = 'Generic Buttons - 6';
+CALL update_entity_name('Controller - Employee Schedule -','Controller - Employee Schedule +');
+
+SET @oldVal = 'Controller - Employee Schedule + Button - Display - Grid Schedule Employees -';
+SET @newVal = 'Controller - Employee Schedule + Button - Display - Grid Schedule Employees +';
 
 SELECT * FROM entity where INSTR(entity_name, @oldVal) !=0;
 UPDATE entity SET entity_name = REPLACE (entity_name, @oldVal, @newVal) 
