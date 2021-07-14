@@ -9,6 +9,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
 BEGIN   
     DECLARE noExisting INT UNSIGNED;
 	DECLARE hasParent TINYINT;
+    DECLARE transGroupNum INT UNSIGNED;
+    DECLARE logMsg VARCHAR(1000);
+    
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+		SET logMsg = concat("Unable to create new test case [", id, ", ", entityTestId, ", ", entityTestName, "]");
+		CALL new_log_entry("ERROR", logMsg, "create_new_entity_test_case", transGroupNum);
+    END;
+    
+    SET transGroupNum = get_next_log_trans_group();
     
     -- If it's an existing test or element we don't add it.
 	IF NOT test_case_exists(id) AND NOT test_case_exists_as_element(id) THEN
@@ -57,7 +67,9 @@ BEGIN
 			
 		-- Add category(s) for TC
 		CALL add_categories_for_entity_test(primaryTestCat, secondaryTestCat, id, entityTestId);		
+        SET logMsg = concat("Created new test case [", id, ", ", entityTestId, ", ", entityTestName, "]");		
 	ELSE	
-		SET @Message = 'Test case exists as element.';
+		SET logMsg = concat("Test case exists [", id, ", ", entityTestId, ", ", entityTestName, "]");		
     END IF;
+    CALL new_log_entry("INFO", logMsg, "create_new_entity_test_case", transGroupNum);
 END

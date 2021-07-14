@@ -8,12 +8,20 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_or_update_entity`(
     IN entityParentId INT UNSIGNED,
     IN entityParentEntityId INT UNSIGNED,
 	IN isElement INT UNSIGNED,
-    IN issueStatusId INT)
+    IN issueStatusId INT,
+    IN versionNote TEXT,
+	IN mjr INT UNSIGNED,
+    IN mnr INT UNSIGNED,
+    IN bld INT UNSIGNED,
+    IN transGroupNum INT UNSIGNED)
 BEGIN
 	DECLARE entityTypeId INT;
 
     SET foreign_key_checks = 0;     
     SET entityTypeId = get_entity_type_id_for_name(entityTypeName);
+    
+    -- Update the entity name (everywhere) before changing it. 
+    CALL update_entity_name(id, entityId, entityName, transGroupNum);
     
     INSERT INTO `test_bench`.`entity` (
 		`id`, `entity_id`, `entity_name`, `entity_details_id`, `entity_type_id`, `entity_type_entity_type_name`, `entity_help_id`, 
@@ -33,5 +41,7 @@ BEGIN
         issue_status_id = issueStatusId;        
 	
 	SET foreign_key_checks = 1;    
+    
+    CALL create_or_update_entity_version(id, entityId , entityName, versionNote, mjr, mnr, bld, transGroupNum);    
     CALL create_or_update_entity_as_element(id, entityId, isElement);
 END
