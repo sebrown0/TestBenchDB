@@ -6,7 +6,7 @@ BEGIN
     TRUNCATE all_test_suite_ids_in_test_run;
     DROP TABLE IF EXISTS elements_have_children;
 	CREATE TEMPORARY TABLE elements_have_children 
-	SELECT test_suite_id AS ts_row_id FROM test_run_has_test_suite WHERE test_run_id = testRunId;
+	SELECT test_suite_row_id AS ts_row_id FROM test_run_has_test_suite WHERE test_run_id = testRunId;
     
     loop_suites_and_elements: LOOP
 		DROP TABLE IF EXISTS test_suite_has_children;
@@ -36,7 +36,7 @@ BEGIN
 		WITH RECURSIVE elements_have_child_suites (id, test_suite_id, test_suite_name, parent_id) AS (
 			SELECT 		id, test_suite_id, test_suite_name, parent_id
 			FROM 		test_suite ts			
-			WHERE 		id IN(SELECT is_element FROM test_suite_has_children WHERE is_element > 1) -- not working when using WHERE id IN(elementIds)
+			WHERE 		id IN(SELECT is_element FROM test_suite_has_children WHERE is_element > 1 GROUP BY is_element) -- not working when using WHERE id IN(elementIds)
 			UNION ALL
 			SELECT 		chld.id, chld.test_suite_id, chld.test_suite_name, chld.parent_id
 			FROM 		test_suite chld

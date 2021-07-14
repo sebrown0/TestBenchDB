@@ -5,7 +5,6 @@ BEGIN
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
 		ROLLBACK;
-        SELECT "Error changing name!";
         SET autocommit = 1;
 	END;
     
