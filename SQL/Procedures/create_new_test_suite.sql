@@ -7,16 +7,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_test_suite`(
     IN testSuiteParentId INT UNSIGNED)
 BEGIN    	
     DECLARE logMsg VARCHAR(1000);
-    DECLARE transGroupNum INT UNSIGNED;
-    
+        
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
 		SET logMsg = concat("Unable to create new test suite [", id, ", ", testSuiteId, ", ", testSuiteName, "]");
-		CALL new_log_entry("ERROR", logMsg, "create_new_test_suite", transGroupNum);
+		CALL new_log_entry("ERROR", logMsg, "create_new_test_suite", @transGroupNumber);
     END;
-    
-    SET transGroupNum = get_next_log_trans_group();
-    
+        
 	-- If it exists or it's an existing element we don't create.
 	IF NOT test_suite_exists(id) AND NOT test_suite_exists_as_element(id) THEN
 		-- Create the version.
@@ -42,5 +39,5 @@ BEGIN
 		SET logMsg = concat("Test suite exists [", id, ", ", testSuiteId, ", ", testSuiteName, "]");
 	END IF;
     
-	CALL new_log_entry("INFO", logMsg, "create_new_test_suite", transGroupNum);
+	CALL new_log_entry("INFO", logMsg, "create_new_test_suite", @transGroupNumber);
 END

@@ -22,10 +22,10 @@ SELECT get_ver_of_test_suite(321);
 
 SELECT get_max_ver_for_entity(376);
 
-SELECT 		ent.id, ent.entity_id -- , ver.major, ver.minor, ver.build, ver.version_note 
+SELECT 		has_ver.*, ver.* -- , ver.major, ver.minor, ver.build, ver.version_note 
 FROM 		test_bench.entity ent
-INNER JOIN	entity_has_version has_ver
+LEFT JOIN	entity_has_version has_ver
 		ON 	has_ver.entity_id = ent.id AND has_ver.entity_entity_id = ent.entity_id
-/*INNER JOIN 	version ver 
-		ON 	ver.id = has_ver.version_id*/
-WHERE 		ent.entity_id = 321;
+LEFT JOIN 	version ver 
+		ON 	ver.id = has_ver.version_id
+WHERE 		ent.entity_id = 10568;

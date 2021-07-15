@@ -1,7 +1,8 @@
 USE test_bench;
 
 -- This is added to the version if set, else the default version note is added.
-SET @versionNote = "";
+SET @versionNote = "Initial version";
+SET @transGroupNumber = get_next_log_trans_group();
 
 TRUNCATE data_entity_test_insert;
 LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\test_bench\\data\\import\\data_entity_test_insert.csv"

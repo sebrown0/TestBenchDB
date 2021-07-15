@@ -1,3 +1,4 @@
+
 "^{q}", "SaveEntity"
 "^{h}", "HighLightGroup"
 "^+{r}", "ResetEntitySheet"
@@ -11,6 +12,7 @@
 "^{UP}", "GotoParent"
 "^{DOWN}", "GotoLastRow" -> or insert test suite in test run on TestRun sheet
 
+"^+{i}", "GetNextEntityIDs"
 "^+{c}", "InsertChild"
 "^+{d}", "UpdateEntityDetails"
 "^+{+}", "GetNextID"
