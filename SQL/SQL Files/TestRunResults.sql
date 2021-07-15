@@ -2,11 +2,13 @@ SELECT * FROM test_bench.entity_test_result ORDER BY id DESC;
 SELECT * FROM test_bench.entity_test_result where id = 77;
 SELECT * FROM test_bench.entity_test_result where entity_test_id = 77;
 SELECT * FROM test_bench.entity_test_result where id IN (65,66,80,81,106,112,186,187,189);
-CALL get_test_results_for_run_by_category(3,'NR');
+CALL get_test_results_for_run_by_category(3,'FAIL',0);
 
+/*
 UPDATE test_bench.entity_test_result SET  fail_severity = 2 where id IN(189);
 UPDATE test_bench.entity_test_result SET  comments = '' where comments = 'Test Complete Notes';
 DELETE FROM test_bench.entity_test_result WHERE id >= 292;
+*/
 
 SET @tr_id = (SELECT max(tr_res.id) FROM test_run_result tr_res WHERE tr_res.test_run_id = 3);
 

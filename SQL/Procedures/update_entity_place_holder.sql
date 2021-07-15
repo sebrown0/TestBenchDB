@@ -3,16 +3,17 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `update_entity_place_holder`(
 	IN placeHolderTypeName VARCHAR(100))
 BEGIN
 	DECLARE placeHolderTypeId INT UNSIGNED;
-    SELECT id INTO placeHolderTypeId FROM place_holder_type WHERE place_holder_type_name = placeHolderTypeName;
+    DECLARE placeHolderId INT UNSIGNED DEFAULT 0;
+    DECLARE nextId INT UNSIGNED DEFAULT 0;
     
-    IF placeHolderTypeId IS NOT NULL AND placeHolderTypeId > 0 THEN
+    SELECT id INTO placeHolderTypeId FROM place_holder_type WHERE place_holder_type_name = placeHolderTypeName;
+    SELECT id INTO placeHolderId FROM place_holders WHERE place_holder_type_name = placeHolderTypeName AND place_holder_name = placeHolderName;
+    SELECT max(id)+1 INTO nextId FROM place_holders;
+    
+    IF placeHolderId IS NULL OR placeHolderId <= 0 THEN
 		INSERT INTO 
-			`test_bench`.`place_holders` (`place_holder_name`, `place_holder_type_id`, `place_holder_type_name`)
+			`test_bench`.`place_holders` (`id`, `place_holder_name`, `place_holder_type_id`, `place_holder_type_name`)
 		VALUES 	
-			(placeHolderName,placeHolderTypeId,placeHolderTypeName)
-		ON DUPLICATE KEY UPDATE
-			place_holder_name = placeHolderName,
-			place_holder_type_id = placeHolderTypeId,
-			place_holder_type_name = placeHolderTypeName;
+			(nextId, placeHolderName, placeHolderTypeId, placeHolderTypeName);
 	END IF;
 END
