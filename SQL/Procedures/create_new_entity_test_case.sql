@@ -5,7 +5,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_new_entity_test_case`(
     IN failureHaltsTest TINYINT, IN primaryTestCat VARCHAR(1000), IN secondaryTestCat VARCHAR(1000),
     IN testCreated DATE, IN newVerCat ENUM('MAJOR', 'MINOR', 'BUILD'), 
     IN parentId INT UNSIGNED, IN parentEntityTestId INT UNSIGNED,
-    IN lastRunDate DATE, IN lastRunTime TIME)
+    IN lastRunDate DATE, IN lastRunTime TIME,
+    IN transGroupNumber INT UNSIGNED)
 BEGIN   
     DECLARE noExisting INT UNSIGNED;
 	DECLARE hasParent TINYINT;
@@ -14,7 +15,7 @@ BEGIN
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
 		SET logMsg = concat("Unable to create new test case [", id, ", ", entityTestId, ", ", entityTestName, "]");
-		CALL new_log_entry("ERROR", logMsg, "create_new_entity_test_case", @transGroupNumber);
+		CALL new_log_entry("ERROR", logMsg, "create_new_entity_test_case", transGroupNumber);
     END;
     
     -- If it's an existing test or element we don't add it.
@@ -68,5 +69,5 @@ BEGIN
 	ELSE	
 		SET logMsg = concat("Test case exists [", id, ", ", entityTestId, ", ", entityTestName, "]");		
     END IF;
-    CALL new_log_entry("INFO", logMsg, "create_new_entity_test_case", @transGroupNumber);
+    CALL new_log_entry("INFO", logMsg, "create_new_entity_test_case", transGroupNumber);
 END
