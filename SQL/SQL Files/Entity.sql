@@ -2,11 +2,11 @@ SELECT * FROM test_bench.entity;
 SELECT count(*) FROM test_bench.entity;
 SELECT * FROM test_bench.entity ORDER BY id DESC;
 SELECT * FROM test_bench.entity WHERE id < 9000 ORDER BY id DESC;
-SELECT * FROM test_bench.entity WHERE id = 10670;			
+SELECT * FROM test_bench.entity WHERE id = 10639;				
 SELECT * FROM test_bench.entity WHERE id >= 1000 and id <= 1100;			;
 SELECT * FROM test_bench.element WHERE entity_row_id = 10119;
 SELECT * FROM test_bench.entity WHERE id > 9000 ORDER BY id DESC;
-SELECT * FROM test_bench.entity WHERE entity_name = 'Container - Employee Salary Details Control - ElementTestSuite - Modal Form - Combos';
+SELECT * FROM test_bench.entity WHERE entity_name = 'Form - Employee Career Details';
 SELECT * FROM test_bench.entity_type;
 SELECT * FROM test_bench.entity_action;
 SELECT * FROM test_bench.entity_action where id = 1254;
@@ -18,9 +18,12 @@ SELECT * FROM test_bench.entity_details where id = 2001;
 SELECT * FROM test_bench.entity_details where ENTITY_id = 1245;
 SELECT * FROM test_bench.entity_can_have_action;
 SELECT * FROM test_bench.entity_can_have_action where entity_id = 663;
+select count(id) from entity; -- 2892
+select count(id) from entity_test; -- 2815
+select count(id) from entity_test_result; -- 1268
 
 SELECT * FROM test_bench.entity_todo;
-SELECT * FROM test_bench.entity WHERE id = 10006;
+SELECT * FROM test_bench.entity WHERE id = 10801;
 SELECT * FROM test_bench.entity WHERE entity_id = 331;
 SELECT * FROM test_bench.entity_action WHERE entity_id = 9047;
 SELECT * FROM test_bench.entity_action WHERE id = 94;
@@ -29,7 +32,7 @@ SELECT * FROM test_bench.entity_action WHERE entity_action_data_expected = '#INF
 select count(id) from entity;
 select count(id) from entity_test;
 /*
-CALL delete_entity_and_tests(1491,1491);
+CALL delete_entity_and_tests(1507,1507);
 
 CALL get_entity_with_details(149,149);
 select get_entity_details_id(152, 152);    
