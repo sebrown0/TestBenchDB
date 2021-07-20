@@ -2,7 +2,8 @@ SELECT * FROM test_bench.entity;
 SELECT count(*) FROM test_bench.entity;
 SELECT * FROM test_bench.entity ORDER BY id DESC;
 SELECT * FROM test_bench.entity WHERE id < 9000 ORDER BY id DESC;
-SELECT * FROM test_bench.entity WHERE id = 10639;				
+SELECT * FROM test_bench.entity WHERE id = 12706;				
+SELECT * FROM test_bench.entity WHERE id > 12570 ORDER BY id desc;				
 SELECT * FROM test_bench.entity WHERE id >= 1000 and id <= 1100;			;
 SELECT * FROM test_bench.element WHERE entity_row_id = 10119;
 SELECT * FROM test_bench.entity WHERE id > 9000 ORDER BY id DESC;
@@ -23,7 +24,7 @@ select count(id) from entity_test; -- 2815
 select count(id) from entity_test_result; -- 1268
 
 SELECT * FROM test_bench.entity_todo;
-SELECT * FROM test_bench.entity WHERE id = 10801;
+SELECT * FROM test_bench.entity WHERE id = 1523;
 SELECT * FROM test_bench.entity WHERE entity_id = 331;
 SELECT * FROM test_bench.entity_action WHERE entity_id = 9047;
 SELECT * FROM test_bench.entity_action WHERE id = 94;

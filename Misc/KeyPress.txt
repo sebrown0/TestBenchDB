@@ -1,4 +1,3 @@
-
 "^{q}", "SaveEntity"
 "^{h}", "HighLightGroup"
 "^+{r}", "ResetEntitySheet"

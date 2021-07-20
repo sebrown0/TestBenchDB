@@ -1,6 +1,6 @@
 SELECT * FROM log ORDER BY id desc;
 
-SELECT * FROM log WHERE trans_group_num = 327;
+SELECT * FROM log WHERE trans_group_num = 428  ORDER BY id;
 
 -- SELECT get_next_log_trans_group();
 

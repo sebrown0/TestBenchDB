@@ -5,10 +5,11 @@ SELECT MAX(ID) FROM test_bench.entity_test;
 SELECT * FROM test_bench.test_suite where id > 321 and test_suite_id = 31;
 SELECT * FROM test_bench.test_suite where id >= 100000 and id <= 100001;
 
-SELECT * FROM test_bench.test_suite where id = 1524;
+SELECT * FROM test_bench.test_suite where id = 1540;
 SELECT * FROM test_bench.test_suite where parent_id = 30 AND test_suite_id = 31;
 SELECT * FROM test_bench.entity_test where parent_test_row_id = 8;
-SELECT * FROM test_bench.entity_test where id = 1539;
+SELECT * FROM test_bench.entity_test where id = 11005;
+
 SELECT * FROM test_bench.entity_test where id >= 100000 and entity_test_id <= 100001;
 
 SELECT * FROM test_suite_has_entity_test where test_suite_id >= 100000 AND test_suite_id < 100001;
